@@ -1,200 +1,154 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
+
+//CONTROLA EL KEYPAD
 public class panelNumeros : MonoBehaviour {
+    public int[] codigo;
 
-    public static string codiCorrecte="2573";
-    public static string playerCode = "";
-    public static int contador = 0;  // conta la quantitat de digits que shan clicat 
-    public Sprite[] sp;
-    public static int clica = 0;
-    public static int incorrecte = 1;
-    private int correcte = 1;
-    private int num = 0;
-    
+    public GameObject numero1;
+    public GameObject numero2;
+    public GameObject numero3;
+    public GameObject numero4;
+    public GameObject numero5;
+    public GameObject numero6;
+    public GameObject numero7;
+    public GameObject numero8;
+    public GameObject numero9;
 
-    //public string letra;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Debug.Log(playerCode);
-        //GetComponent<SpriteRenderer>().sprite = sp[2];
+    public TextMesh texto;
+    public GameObject aceptar;
+    public GameObject eliminar;
 
-        if( correcte == 1)
+    public string textoEspera;
+    public string textoError;
+    public string textoAcertado;
+
+    List<int> cod = new List<int>();
+    int index = 0;
+
+    // Inicialitza el texto
+    void Start()
+    {
+
+        texto.GetComponent<TextMesh>().text = textoEspera;
+    }
+
+    //recibe del script de tecla 
+    public void rebreCodi(GameObject tecla)
+    {
+        if (tecla == numero1)
         {
-            num++;
-            correcte = 0;
+            aumentarCod(1);
+        }
+        if (tecla == numero2)
+        {
+            aumentarCod(2);
+        }
+        if (tecla == numero3)
+        {
+            aumentarCod(3);
+        }
+        if (tecla == numero4)
+        {
+            aumentarCod(4);
+        }
+        if (tecla == numero5)
+        {
+            aumentarCod(5);
+        }
+        if (tecla == numero6)
+        {
+            aumentarCod(6);
+        }
+        if (tecla == numero7)
+        {
+            aumentarCod(7);
+        }
+        if (tecla == numero8)
+        {
+            aumentarCod(8);
+        }
+        if (tecla == numero9)
+        {
+            aumentarCod(9);
+        }
+
+        if( tecla == eliminar)
+        {
+            eliminarCodi();
+        }
+
+        if( tecla == aceptar)
+        {
+            autentificarCodi();
         }
 
 
+    }
 
-        if ( incorrecte == 1)
+    void autentificarCodi()
+    {
+        if( index == codigo.Length)
         {
-                playerCode = "";
-                num = 0;    
-            
+            bool correct = true;
+
+            for( int i = 0; i < codigo.Length; i++)
+            {
+                if( cod[i] != codigo[i])
+                {
+                    correct = false;
+                    break;
+                }
+            }
+
+            if( correct == true)
+            {
+                texto.GetComponent<TextMesh>().text = textoAcertado;
+            }else
+            {
+                texto.GetComponent<TextMesh>().text = textoError;
+                borrar();
+            }
+
+
+
+        }else
+        {
+            texto.GetComponent<TextMesh>().text = textoError;
+            borrar();
         }
-	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        GetComponent<SpriteRenderer>().sprite = sp[1];
     }
 
-    private void OnTriggerExit(Collider other)
+    void borrar()  
     {
-        GetComponent<SpriteRenderer>().sprite = sp[0];
+        cod.Clear();
+        index = 0;
     }
 
-    private void OnTriggerStay(Collider other)
+    void eliminarCodi()
     {
-        if (OVRInput.Get(OVRInput.Button.One))
+        borrar();
+        texto.GetComponent<TextMesh>().text = textoEspera;
+    }
+
+    public void aumentarCod( int num)
+    {
+        cod.Add(num);  // Incluimos el numero en la lista para despues poder comprobar el codigo
+        index++;  // Aumentamos el indice para indicar que vamos a poner un * más por pantalla
+
+        texto.GetComponent<TextMesh>().text = "";  // inicializamos el mensaje de texto
+
+        for ( int i = 0; i < index; i++)
         {
-            if( num == 0 ) {
-                if (other.tag[0] == codiCorrecte[0])
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[2];
-                    correcte = 1;
-                }else
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[3];
-                    incorrecte = 1;
-                }
-            }
-            if( num == 1)
-            {
-                if(other.tag[0] == codiCorrecte[1])
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[2];
-                    correcte = 1;
-                }else
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[3];
-                    incorrecte = 1;
-                }
-            }
-            if( num == 2)
-            {
-                if (other.tag[0] == codiCorrecte[2])
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[2];
-                    correcte = 1;
-                }
-                else
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[3];
-                    incorrecte = 1;
-                }
-            }
-            if( num == 3)
-            {
-                if (other.tag[0] == codiCorrecte[3])
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[2];
-                    correcte = 1;
-                }
-                else
-                {
-                    GetComponent<SpriteRenderer>().sprite = sp[3];
-                    incorrecte = 1;
-                }
-            }
-
+            texto.GetComponent<TextMesh>().text += "*";  //segun los elementos que vayan entrando ira mostrando *
         }
     }
 
-
-
-
-    /*private void OnMouseUp()
-    {
-        if( clicat == 0)
-        {
-            //Debug.Log(contador);
-            clicat = 1;
-            playerCode += gameObject.name;
-            contador += 1;
-        }
-       // Debug.Log("Contador:" +contador);
-        if (contador == 1)
-        {
-            if (playerCode[0] == codiCorrecte[0])
-            {
-                //Debug.Log("entro 1");
-                
-                incorrecte = 0;
-            }
-        }
-        else
-        {
-            if (contador == 2 && clicat != 1)
-            {
-                if (playerCode[1] == codiCorrecte[1])
-                {
-                    //Debug.Log("entro 2");
-                    GetComponent<SpriteRenderer>().sprite = sp[2];
-                    incorrecte = 0;
-                }
-
-            }
-            else
-            {
-                if (contador == 3 && clicat != 1)
-                {
-                    if (playerCode[2] == codiCorrecte[2])
-                    {
-                        //Debug.Log("entro 3");
-                        GetComponent<SpriteRenderer>().sprite = sp[2];
-                        incorrecte = 0;
-                    }
-                    else
-                    {
-                        if (contador == 4 & clicat != 1)
-                        {
-                            if (playerCode == codiCorrecte)
-                            {
-                                //Debug.Log("entro 4");
-                               // GetComponent<TextMesh>().text = "Correcte";
-                            }
-                        }
-                    }
-                }
-
-            }
-
-        }
-
-
-
-        //GetComponent<SpriteRenderer>().sprite = sp[2];
-        //StartCoroutine(esperarCanvi());
-        //clica = 1;
-    }
-
-    public void OnMouseOver()
-    {
-        GetComponent<SpriteRenderer>().sprite = sp[1];
-    }
-
-    private void OnMouseExit()
-    {
-       
-        GetComponent<SpriteRenderer>().sprite = sp[0];
-        
-        
-    }
-
-    IEnumerator esperarCanvi()
-    {
-        yield return new WaitForSeconds(1);
-        GetComponent<SpriteRenderer>().sprite = sp[0];
-        clica = 0;
-    }*/
 
 }
