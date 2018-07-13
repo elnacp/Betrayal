@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class tapaPlomos_script : MonoBehaviour {
-    public Animator anim;
+    private Animator anim;
     private bool isOpen;
 
-	// Use this for initialization
-	void Start () {
+
+    public GameObject abrirA;
+    public GameObject abrirX;
+    public GameObject cerrarB;
+    public GameObject cerrarY;
+
+
+    // Use this for initialization
+    void Start () {
         anim = GetComponent<Animator>();
         isOpen = false;
     }
@@ -20,30 +27,108 @@ public class tapaPlomos_script : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        //ABRE LA TAPA DE LA CAJA DE PLOMOS
-        if (OVRInput.Get(OVRInput.Button.One))
+        Debug.Log("ENTRO");
+        if (col.name == "LeftHandAnchor")
         {
-            //Si no se ha entrado en esta opcion se activa la animacion
-            if(!isOpen)
+            //ABRE LA TAPA DE LA CAJA DE PLOMOS
+            if (OVRInput.Get(OVRInput.Button.Three))
             {
-                anim.SetBool("open", true);
-                isOpen = true;
+                //Si no se ha entrado en esta opcion se activa la animacion
+                if (!isOpen)
+                {
+                    Debug.Log("OPEEEEEN");
+                    anim.SetBool("open", true);
+                    isOpen = true;
+                }
+
             }
 
+            //CIERRA LA TAPA DE LA CAJA DE PLOMOS
+            if (OVRInput.Get(OVRInput.Button.Four))
+            {
+                //Si no se ha entrado en esta opcion se activa la animacion
+                if (isOpen)
+                {
+                    anim.SetBool("open", false);
+                    isOpen = false;
+                }
+
+            }
         }
-        
-        //CIERRA LA TAPA DE LA CAJA DE PLOMOS
-        if (OVRInput.Get(OVRInput.Button.Two))
+
+        if (col.name == " RightHandAnchor")
         {
-            //Si no se ha entrado en esta opcion se activa la animacion
+            //ABRE LA TAPA DE LA CAJA DE PLOMOS
+            if (OVRInput.Get(OVRInput.Button.One))
+            {
+                //Si no se ha entrado en esta opcion se activa la animacion
+                if (!isOpen)
+                {
+                    anim.SetBool("open", true);
+                    isOpen = true;
+                }
+
+            }
+
+            //CIERRA LA TAPA DE LA CAJA DE PLOMOS
+            if (OVRInput.Get(OVRInput.Button.Two))
+            {
+                //Si no se ha entrado en esta opcion se activa la animacion
+                if (isOpen)
+                {
+                    anim.SetBool("open", false);
+                    isOpen = false;
+                }
+
+            }
+        }
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.name == "RightHandAnchor")
+        {
             if (isOpen)
             {
-                anim.SetBool("open", false);
-                isOpen = false;
+                cerrarB.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+            else
+            {
+                abrirA.SetActive(true);
+                StartCoroutine("WaitForSec");
             }
 
         }
 
+        if (other.name == "LeftHandAnchor")
+        {
+            if (isOpen)
+            {
+                cerrarY.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+            else
+            {
+                abrirX.SetActive(true);
 
+            }
+        }
     }
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        abrirX.SetActive(false);
+        abrirA.SetActive(false);
+        cerrarB.SetActive(false);
+        cerrarY.SetActive(false);
+    }
+
+
 }

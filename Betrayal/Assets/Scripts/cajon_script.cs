@@ -8,6 +8,12 @@ public class cajon_script : MonoBehaviour {
     private bool isClose;
     private float timer;
     private bool stop;
+
+
+    public GameObject abrirA;
+    public GameObject abrirX;
+    public GameObject cerrarB;
+    public GameObject cerrarY;
     
 
     public float velocity;
@@ -59,33 +65,121 @@ public class cajon_script : MonoBehaviour {
     void OnTriggerStay(Collider col)
     {
 
-        //EN EL CASO DE QUE CLIQUE LA "A" ABRE EL CAJON
-        if(OVRInput.Get(OVRInput.Button.One) ) 
+
+        if( col.name == "RightHandAnchor")
         {
-            //Solo se activa si no ha entrado en la animacion y si no ha parado
-            if (isClose == true && stop == false)
+
+            //EN EL CASO DE QUE CLIQUE LA "A" ABRE EL CAJON
+            if (OVRInput.Get(OVRInput.Button.One))
             {
-                isOpen = true;
-                isClose = false;
-                stop = true;
-                timer = Time.time + animationDuration;
+                //Solo se activa si no ha entrado en la animacion y si no ha parado
+                if (isClose == true && stop == false)
+                {
+                    isOpen = true;
+                    isClose = false;
+                    stop = true;
+                    timer = Time.time + animationDuration;
+                }
+
             }
 
+
+
+            //EN EL CASO DE QUE CLIQUE LA "B" ABRE EL CAJON
+            if (OVRInput.Get(OVRInput.Button.Two))
+            {
+                if (isOpen == true && stop == false)
+                {
+                    isClose = true;
+                    isOpen = false;
+                    stop = true;
+                    timer = Time.time + animationDuration;
+                }
+
+            }
+            
         }
 
-        //EN EL CASO DE QUE CLIQUE LA "B" ABRE EL CAJON
-        if (OVRInput.Get(OVRInput.Button.Two))
+        if (col.name == "LeftHandAnchor")
         {
-            if(isOpen == true && stop == false)
+            //EN EL CASO DE QUE CLIQUE LA "A" ABRE EL CAJON
+            if (OVRInput.Get(OVRInput.Button.Three))
             {
-                isClose = true;
-                isOpen = false;
-                stop = true;
-                timer = Time.time + animationDuration;
+                //Solo se activa si no ha entrado en la animacion y si no ha parado
+                if (isClose == true && stop == false)
+                {
+                    isOpen = true;
+                    isClose = false;
+                    stop = true;
+                    timer = Time.time + animationDuration;
+                }
+
             }
-           
+
+
+
+            //EN EL CASO DE QUE CLIQUE LA "B" ABRE EL CAJON
+            if (OVRInput.Get(OVRInput.Button.Four))
+            {
+                if (isOpen == true && stop == false)
+                {
+                    isClose = true;
+                    isOpen = false;
+                    stop = true;
+                    timer = Time.time + animationDuration;
+                }
+
+            }
+        }
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.name == "RightHandAnchor")
+        {
+            if(isOpen)
+            {
+                cerrarB.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }else
+            {
+                abrirA.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+            
+        }
+
+        if (other.name == "LeftHandAnchor")
+        {
+            if (isOpen)
+            {
+                cerrarY.SetActive(true);
+                StartCoroutine("WaitForSec");
+            }
+            else
+            {
+                abrirX.SetActive(true);
+
+            }
         }
     }
 
-   
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        abrirX.SetActive(false);
+        abrirA.SetActive(false);
+        cerrarB.SetActive(false);
+        cerrarY.SetActive(false);
+    }
+
+
 }
