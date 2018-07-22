@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioBrooke : MonoBehaviour
 {
-
+    public GameObject mensaje;
     public GameObject alex;
 
     AudioSource brooke;
@@ -60,6 +60,7 @@ public class AudioBrooke : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        lang = variablesGlobals.lang;
         brooke = GetComponent<AudioSource>();
     }
 
@@ -103,7 +104,8 @@ public class AudioBrooke : MonoBehaviour
             case 17:
                 brooke.clip = audio17;
                 brooke.Play();
-                
+                mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
+
                 break;
 
 
@@ -125,11 +127,15 @@ public class AudioBrooke : MonoBehaviour
             case 64:
                 brooke.clip = audio64;
                 brooke.Play();
-
+                mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
                 break;
         }
 
         
     }
+
+
+
+    
 
 }

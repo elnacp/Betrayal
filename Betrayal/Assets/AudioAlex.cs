@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class AudioAlex : MonoBehaviour {
 
+    public GameObject mensaje;
     public GameObject brooke;
+    
 
     AudioSource alex;
 
@@ -51,7 +53,7 @@ public class AudioAlex : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         lang = variablesGlobals.lang;
-
+        
         
         if (lang.Equals("español"))
         {
