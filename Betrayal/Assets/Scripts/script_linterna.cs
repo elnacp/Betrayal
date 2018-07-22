@@ -6,17 +6,6 @@ public class script_linterna : MonoBehaviour {
 
     private bool isInside;
 
-    private void Update()
-    {
-
-        
-
-
-
-    }
-
-
-
 
     // Use this for initialization
     private void OnTriggerStay(Collider other)

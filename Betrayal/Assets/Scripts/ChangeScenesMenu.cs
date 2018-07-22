@@ -47,6 +47,7 @@ public class ChangeScenesMenu : MonoBehaviour {
                 if(boton.name == "Jugar")
                 {
                     ChangeToScene(1);
+                    variablesGlobals.entroEscena = true;
                 }
                 if(boton.name == "Historia")
                 {
