@@ -13,11 +13,10 @@ public class AudioBrooke : MonoBehaviour
     public AudioClip audio15;
     public AudioClip audio16;
     public AudioClip audio17;
-    /*public AudioClip audio18;
+    public AudioClip audio18;
     public AudioClip audio19;
     public AudioClip audio20;
     public AudioClip audio21;
-    public AudioClip audio22;
     public AudioClip audio22;
     public AudioClip audio23;
     public AudioClip audio24;
@@ -29,10 +28,9 @@ public class AudioBrooke : MonoBehaviour
     public AudioClip audio30;
     public AudioClip audio31;
     public AudioClip audio32;
-    */
+    
     //AUDIOS EN INGLES
     public AudioClip audio61;
-    /*
     public AudioClip audio62;
     public AudioClip audio63;
     public AudioClip audio64;
@@ -50,7 +48,6 @@ public class AudioBrooke : MonoBehaviour
     public AudioClip audio76;
     public AudioClip audio77;
     public AudioClip audio78;
-    */
 
     private string lang;
     private bool español = false;
@@ -88,6 +85,7 @@ public class AudioBrooke : MonoBehaviour
     {
         switch (num)
         {
+            //DIALOGO EN ESPAÑOL
             case 15:
                 brooke.clip = audio15;
                 brooke.Play();
@@ -106,6 +104,28 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio17;
                 brooke.Play();
                 
+                break;
+
+
+            //DIALOGO EN INGLES
+            case 62:
+                brooke.clip = audio62;
+                brooke.Play();
+                numeroAudio = 48;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length);
+                break;
+            case 63:
+                brooke.clip = audio63;
+                brooke.Play();
+                numeroAudio = 49;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length);
+                break;
+            case 64:
+                brooke.clip = audio64;
+                brooke.Play();
+
                 break;
         }
 
