@@ -17,7 +17,7 @@ public class acumuladorPuzle : MonoBehaviour {
 
         if (entro)
         {
-            Debug.Log(acomulador);
+
             entro = false;
         }
 
