@@ -34,6 +34,11 @@ public class MensajePrueba : MonoBehaviour {
                         prueba.text = "1ra Prueba: Libera a Brooke";
                         mision.text = "Encuentra la llave";
                         break;
+                    case 2:
+
+                        prueba.text = "2a Prueba: ";
+                        mision.text = "¿Dónde esta la luz?";
+                        break;
                 }
                 
                 break;
@@ -43,6 +48,11 @@ public class MensajePrueba : MonoBehaviour {
                     case 1:
                         prueba.text = "1st Test: Liberate Brooke";
                         mision.text = "Find the key";
+                        break;
+                    case 2:
+
+                        prueba.text = "2nd Test:";
+                        mision.text = "Where is the light?";
                         break;
                 }
                 break;

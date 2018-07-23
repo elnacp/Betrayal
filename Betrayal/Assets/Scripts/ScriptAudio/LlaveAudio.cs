@@ -19,10 +19,24 @@ public class LlaveAudio : MonoBehaviour {
                 {
                     alex.GetComponent<AudioAlex>().ActivateAudio(36);
                     mensaje.GetComponent<MensajePrueba>().BuidarText();
+                    isEnter = true;
                 }
-                
+                if (variablesGlobals.lang.Equals("english"))
+                {
+                    alex.GetComponent<AudioAlex>().ActivateAudio(50);
+                    mensaje.GetComponent<MensajePrueba>().BuidarText();
+                    isEnter = true;
+                }
+
             }
         }
+
+        if( other.name == "TuboComunicació")
+        {
+            Debug.Log("ENTRO");
+            transform.position = new Vector3(-98, 752, 479);
+        }
+
     }
 
 

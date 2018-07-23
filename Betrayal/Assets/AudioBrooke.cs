@@ -6,6 +6,7 @@ public class AudioBrooke : MonoBehaviour
 {
     public GameObject mensaje;
     public GameObject alex;
+    public GameObject mensajeTubo;
 
     AudioSource brooke;
 
@@ -58,6 +59,10 @@ public class AudioBrooke : MonoBehaviour
 
 
 
+    
+
+
+
     // Use this for initialization
     void Start () {
         lang = variablesGlobals.lang;
@@ -105,7 +110,12 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio17;
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
-
+                mensajeTubo.GetComponent<MensajesTubo>().MostrarMensaje();
+                break;
+            case 18:
+                brooke.clip = audio18;
+                brooke.Play();
+                mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
                 break;
 
 
@@ -128,6 +138,12 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio64;
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
+                mensajeTubo.GetComponent<MensajesTubo>().MostrarMensaje();
+                break;
+            case 65:
+                brooke.clip = audio65;
+                brooke.Play();
+                mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
                 break;
         }
 

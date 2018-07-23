@@ -60,11 +60,11 @@ public class AudioAlex : MonoBehaviour {
             español = true;
             Wait(5);
             alex = GetComponent<AudioSource>();
-            alex.clip = audio33;
+            /*ex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
-            Invoke("PedirActivar", alex.clip.length);
+            Invoke("PedirActivar", alex.clip.length);*/
             
             //GetComponent<AudioBrooke>().ActivateAudioBrooke(15); 
             
@@ -76,11 +76,11 @@ public class AudioAlex : MonoBehaviour {
             english = true;
             Wait(30);
             alex = GetComponent<AudioSource>();
-            alex.clip = audio47;
+            /*ex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
-            Invoke("PedirActivar", alex.clip.length);
+            Invoke("PedirActivar", alex.clip.length);*/
         }
 
     }
@@ -117,7 +117,11 @@ public class AudioAlex : MonoBehaviour {
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
                 break;
-           
+            case 36:
+                alex.clip = audio36;
+                alex.Play();
+                break;
+
             //DIALOGO EN INGLES
             case 48:
                 alex.clip = audio48;
@@ -132,6 +136,10 @@ public class AudioAlex : MonoBehaviour {
                 numeroAudio = 64;
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
+                break;
+            case 50:
+                alex.clip = audio50;
+                alex.Play();
                 break;
         }
 

@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class traspasoObjetos : MonoBehaviour {
 
+    public GameObject brooke;
+    public GameObject key;
+    
 
+   
 
 
     private void OnTriggerEnter(Collider other)
     {
+
+        Debug.Log(other.name);
         switch (other.name)
         {
             case "Llave":
-                 //Primero comprueba que el trigger este activado
-                 //Pone el dialogo de muchas gracias         
+                if (variablesGlobals.lang.Equals("español")) { brooke.GetComponent<AudioBrooke>().ActivateAudio(18); }
+                if (variablesGlobals.lang.Equals("english")) { brooke.GetComponent<AudioBrooke>().ActivateAudio(65); }
+                
 
-                break;
-        }    
+            break;
+        }
+        
+      
+
     }
 }
