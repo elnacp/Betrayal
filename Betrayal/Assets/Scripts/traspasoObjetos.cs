@@ -20,9 +20,8 @@ public class traspasoObjetos : MonoBehaviour {
             case "Llave":
                 if (variablesGlobals.lang.Equals("español")) { brooke.GetComponent<AudioBrooke>().ActivateAudio(18); }
                 if (variablesGlobals.lang.Equals("english")) { brooke.GetComponent<AudioBrooke>().ActivateAudio(65); }
-                
-
-            break;
+                variablesGlobals.prova1 = true;
+                break;
         }
         
       

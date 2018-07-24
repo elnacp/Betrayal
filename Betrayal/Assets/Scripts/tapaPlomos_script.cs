@@ -56,7 +56,7 @@ public class tapaPlomos_script : MonoBehaviour {
             }
         }
 
-        if (col.name == " RightHandAnchor")
+        if (col.name == "RightHandAnchor")
         {
             //ABRE LA TAPA DE LA CAJA DE PLOMOS
             if (OVRInput.Get(OVRInput.Button.One))
@@ -64,6 +64,7 @@ public class tapaPlomos_script : MonoBehaviour {
                 //Si no se ha entrado en esta opcion se activa la animacion
                 if (!isOpen)
                 {
+                    Debug.Log("OPEEEEEN");
                     anim.SetBool("open", true);
                     isOpen = true;
                 }

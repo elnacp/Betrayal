@@ -7,6 +7,8 @@ public class variablesGlobals : MonoBehaviour {
     static public string lang = "english";
     static public bool english = false;
     static public bool spanish = true;
+    static public bool prova1 = false;
+    static public bool prova2 = false;
 
     static public bool entroEscena = false;
     
