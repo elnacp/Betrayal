@@ -8,6 +8,7 @@ public class colliderBlau : MonoBehaviour {
     public GameObject PlomBlau;
     private bool destruir = false;
     public GameObject plomi;
+    public GameObject acomulador;  
 
 
     private void Update()
@@ -27,6 +28,7 @@ public class colliderBlau : MonoBehaviour {
             PlomBlau.SetActive(true);
             //other.gameObject.SetActive(false);
             destruir = true;
+            acomulador.GetComponent<AcomuladorPlomillos>().acomulaPlomi();
         }
     }
 

@@ -7,6 +7,7 @@ public class LlaveAudio : MonoBehaviour {
     private bool isEnter;
     public GameObject alex;
     public GameObject mensaje;
+    public bool destruir = false;
 
 
     private void OnTriggerEnter(Collider other)
@@ -34,9 +35,18 @@ public class LlaveAudio : MonoBehaviour {
         if( other.name == "TuboComunicació")
         {
             Debug.Log("ENTRO");
-            transform.position = new Vector3(-98, 752, 479);
+            
+            destruir = true;
         }
 
+    }
+
+    private void Update()
+    {
+        if( destruir == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
 

@@ -121,6 +121,14 @@ public class AudioAlex : MonoBehaviour {
                 alex.clip = audio36;
                 alex.Play();
                 break;
+            case 37:
+                alex.clip = audio37;
+                alex.Play();
+                break;
+            case 38:
+                alex.clip = audio38;
+                alex.Play();
+                break;
 
             //DIALOGO EN INGLES
             case 48:
@@ -139,6 +147,14 @@ public class AudioAlex : MonoBehaviour {
                 break;
             case 50:
                 alex.clip = audio50;
+                alex.Play();
+                break;
+            case 51:
+                alex.clip = audio51;
+                alex.Play();
+                break;
+            case 52:
+                alex.clip = audio52;
                 alex.Play();
                 break;
         }
