@@ -6,6 +6,8 @@ public class AudioAlex : MonoBehaviour {
 
     public GameObject mensaje;
     public GameObject brooke;
+    public GameObject jane;
+    
     
 
     AudioSource alex;
@@ -60,7 +62,7 @@ public class AudioAlex : MonoBehaviour {
             español = true;
             Wait(5);
             alex = GetComponent<AudioSource>();
-            /*ex.clip = audio33;
+            /*alex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
@@ -76,7 +78,7 @@ public class AudioAlex : MonoBehaviour {
             english = true;
             Wait(30);
             alex = GetComponent<AudioSource>();
-            /*ex.clip = audio47;
+            /*alex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
@@ -93,6 +95,7 @@ public class AudioAlex : MonoBehaviour {
                 brooke.GetComponent<AudioBrooke>().ActivateAudio(numeroAudio);
                 break;
             case 3: //JANE
+                jane.GetComponent<AudioJane>().ActivateAudio(numeroAudio);
                 break;
         }
     }
@@ -128,6 +131,17 @@ public class AudioAlex : MonoBehaviour {
             case 38:
                 alex.clip = audio38;
                 alex.Play();
+                //se pide encender las luces
+                numeroAudio = 1;
+                personatge = 3;
+                Invoke("PedirActivar", alex.clip.length);
+                break;
+            case 39:
+                alex.clip = audio39;
+                alex.Play();
+                numeroAudio = 2;
+                personatge = 3;
+                Invoke("PedirActivar", alex.clip.length);
                 break;
 
             //DIALOGO EN INGLES
@@ -156,7 +170,18 @@ public class AudioAlex : MonoBehaviour {
             case 52:
                 alex.clip = audio52;
                 alex.Play();
+                numeroAudio = 8;
+                personatge = 3;
+                Invoke("PedirActivar", alex.clip.length);
                 break;
+            case 53:
+                alex.clip = audio53;
+                alex.Play();
+                numeroAudio = 9;
+                personatge = 3;
+                Invoke("PedirActivar", alex.clip.length);
+                break;
+
         }
 
         

@@ -23,7 +23,7 @@ public class MensajePrueba : MonoBehaviour {
 
     public void TitleTest(int test, string idioma)
     {
-        Debug.Log(idioma);
+        
         switch (idioma)
         {
             case "español"://IDIOMA = ESPAÑOL

@@ -7,6 +7,7 @@ public class AudioBrooke : MonoBehaviour
     public GameObject mensaje;
     public GameObject alex;
     public GameObject mensajeTubo;
+    public GameObject jane;
 
     AudioSource brooke;
 
@@ -75,7 +76,7 @@ public class AudioBrooke : MonoBehaviour
     {
         switch (personatge)
         {
-            case 1: // BROOKE
+            case 1: // ALEX
                 alex.GetComponent<AudioAlex>().ActivateAudio(numeroAudio);
                 break;
             case 3: //JANE

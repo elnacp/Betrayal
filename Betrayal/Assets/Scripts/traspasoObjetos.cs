@@ -14,7 +14,7 @@ public class traspasoObjetos : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log(other.name);
+
         switch (other.name)
         {
             case "Llave":

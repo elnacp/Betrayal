@@ -27,7 +27,7 @@ public class tapaPlomos_script : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        Debug.Log("ENTRO");
+
         if (col.name == "LeftHandAnchor")
         {
             //ABRE LA TAPA DE LA CAJA DE PLOMOS
@@ -64,7 +64,7 @@ public class tapaPlomos_script : MonoBehaviour {
                 //Si no se ha entrado en esta opcion se activa la animacion
                 if (!isOpen)
                 {
-                    Debug.Log("OPEEEEEN");
+
                     anim.SetBool("open", true);
                     isOpen = true;
                 }

@@ -7,13 +7,15 @@ public class AcomuladorPlomillos : MonoBehaviour {
     public int acomulador = 0;
     public GameObject alex;
     public GameObject plomilloAmarillo;
+    
 
     public void acomulaPlomi()
     {
         acomulador++;
-        if( acomulador == 3)
+        //En el caso de que el acomulador de fusibles sea 4 (FINAL DE LA PRUEBA)
+        if ( acomulador == 3)
         {
-            //se activa el audio 51/ - 37
+            
             if(variablesGlobals.lang.Equals("español"))
             {
                 alex.GetComponent<AudioAlex>().ActivateAudio(37);
@@ -24,6 +26,8 @@ public class AcomuladorPlomillos : MonoBehaviour {
             }
             plomilloAmarillo.SetActive(true);
         }
+
+        //En el caso de que el acomulador de fusibles sea 4 (FINAL DE LA PRUEBA)
         if( acomulador == 4)
         {
             if (variablesGlobals.lang.Equals("español"))
@@ -34,6 +38,10 @@ public class AcomuladorPlomillos : MonoBehaviour {
             {
                 alex.GetComponent<AudioAlex>().ActivateAudio(52);
             }
+
+
+
+
         }
     }
 

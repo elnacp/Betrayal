@@ -10,6 +10,8 @@ public class cajon_script : MonoBehaviour {
     private bool stop;
 
 
+    public GameObject cajon;
+
     public GameObject abrirA;
     public GameObject abrirX;
     public GameObject cerrarB;
@@ -25,6 +27,7 @@ public class cajon_script : MonoBehaviour {
         //anim = GetComponent<Animator>();	
         isOpen = false;
         isClose = true;
+        
       
 	}
 	// Update is called once per frame
@@ -75,6 +78,9 @@ public class cajon_script : MonoBehaviour {
                 //Solo se activa si no ha entrado en la animacion y si no ha parado
                 if (isClose == true && stop == false)
                 {
+                    //audio del cajon
+
+                    cajon.GetComponent<CajonAudio>().AbrirCajon();
                     isOpen = true;
                     isClose = false;
                     stop = true;
@@ -90,6 +96,9 @@ public class cajon_script : MonoBehaviour {
             {
                 if (isOpen == true && stop == false)
                 {
+
+                    //audio del cajon
+                    cajon.GetComponent<CajonAudio>().CerrarCajon();
                     isClose = true;
                     isOpen = false;
                     stop = true;
@@ -108,6 +117,9 @@ public class cajon_script : MonoBehaviour {
                 //Solo se activa si no ha entrado en la animacion y si no ha parado
                 if (isClose == true && stop == false)
                 {
+                    //audio del cajon
+
+                    cajon.GetComponent<CajonAudio>().AbrirCajon();
                     isOpen = true;
                     isClose = false;
                     stop = true;
@@ -123,6 +135,8 @@ public class cajon_script : MonoBehaviour {
             {
                 if (isOpen == true && stop == false)
                 {
+
+                    cajon.GetComponent<CajonAudio>().CerrarCajon();
                     isClose = true;
                     isOpen = false;
                     stop = true;

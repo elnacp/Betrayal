@@ -34,7 +34,7 @@ public class LlaveAudio : MonoBehaviour {
 
         if( other.name == "TuboComunicació")
         {
-            Debug.Log("ENTRO");
+
             
             destruir = true;
         }
