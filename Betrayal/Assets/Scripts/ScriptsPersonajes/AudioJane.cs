@@ -78,12 +78,12 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 numeroAudio = 39;
                 personatge = 1;
-                Invoke("PedirActivar", jane.clip.length);
+                Invoke("PedirActivar", jane.clip.length + 2);
                 break;
             case 2:
                 jane.clip = audio2;
                 jane.Play();
-                Invoke("PedirDesactivar", jane.clip.length);
+                Invoke("PedirDesactivar", jane.clip.length + 2);
                 break;
 
        
@@ -96,12 +96,12 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 numeroAudio = 53;
                 personatge = 1;
-                Invoke("PedirActivar", jane.clip.length);
+                Invoke("PedirActivar", jane.clip.length + 2);
                 break;
             case 9:
                 jane.clip = audio9;
                 jane.Play();
-                Invoke("PedirDesactivar", jane.clip.length);
+                Invoke("PedirDesactivar", jane.clip.length +2);
                 break;
         }
     }
