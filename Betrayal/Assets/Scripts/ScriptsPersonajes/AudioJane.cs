@@ -8,6 +8,7 @@ public class AudioJane : MonoBehaviour
     public GameObject brooke;
     public GameObject alex;
     public GameObject pantallaTele;
+    
 
 
     public AudioSource jane;
@@ -53,6 +54,7 @@ public class AudioJane : MonoBehaviour
                 alex.GetComponent<AudioAlex>().ActivateAudio(numeroAudio);
                 break;
             case 2: // BROOKE
+                brooke.GetComponent<AudioBrooke>().ActivateAudio(numeroAudio);
                 break;
         }
     }
@@ -62,6 +64,19 @@ public class AudioJane : MonoBehaviour
     {
         pantallaTele.GetComponent<TelevisorAudio>().DesactivarTelevisor();
         pantallaTele.SetActive(false);
+
+        if (lang.Equals("español")){
+            numeroAudio = 19;   
+        }
+        if (lang.Equals("english"))
+        {
+            numeroAudio = 66;
+        }
+        Debug.Log(numeroAudio);
+        personatge = 2;
+        Invoke("PedirActivar", 3);
+
+        
     }
 
 
@@ -78,7 +93,7 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 numeroAudio = 39;
                 personatge = 1;
-                Invoke("PedirActivar", jane.clip.length + 2);
+                Invoke("PedirActivar", jane.clip.length + 1);
                 break;
             case 2:
                 jane.clip = audio2;
@@ -96,7 +111,7 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 numeroAudio = 53;
                 personatge = 1;
-                Invoke("PedirActivar", jane.clip.length + 2);
+                Invoke("PedirActivar", jane.clip.length + 1);
                 break;
             case 9:
                 jane.clip = audio9;

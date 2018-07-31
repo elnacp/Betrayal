@@ -19,14 +19,18 @@ public class panelNumeros : MonoBehaviour {
     public GameObject numero8;
     public GameObject numero9;
 
+    public GameObject audioPanel;
+
+
+
 
     public TextMesh texto;
     public GameObject aceptar;
     public GameObject eliminar;
 
-    public string textoEspera;
-    public string textoError;
-    public string textoAcertado;
+    private string textoEspera;
+    private string textoError;
+    private string textoAcertado;
 
     List<int> cod = new List<int>();
     int index = 0;
@@ -35,7 +39,24 @@ public class panelNumeros : MonoBehaviour {
     void Start()
     {
 
+        if(variablesGlobals.lang.Equals("español"))
+        {
+            textoEspera = "INSERTA CODIGO";
+            textoError = "CODIGO INCORRECTO";
+            textoAcertado = "CODIGO CORRECTO";
+        }
+
+        if (variablesGlobals.lang.Equals("english"))
+        {
+            textoEspera = "INSERT CODE";
+            textoError = "INCORRECT CODE";
+            textoAcertado = "CORRECT CODE";
+        }
+
+
         texto.GetComponent<TextMesh>().text = textoEspera;
+        texto.fontSize = 16;
+
     }
 
     //recibe del script de tecla 
@@ -109,10 +130,15 @@ public class panelNumeros : MonoBehaviour {
             if( correct == true)
             {
                 texto.GetComponent<TextMesh>().text = textoAcertado;
-            }else
+                texto.fontSize = 16;
+                audioPanel.GetComponent<PanelAudio>().CorrectCode();
+            }
+            else
             {
                 texto.GetComponent<TextMesh>().text = textoError;
+                texto.fontSize = 16;
                 borrar();
+                audioPanel.GetComponent<PanelAudio>().IncorrectCode();
             }
 
 
@@ -120,7 +146,9 @@ public class panelNumeros : MonoBehaviour {
         }else
         {
             texto.GetComponent<TextMesh>().text = textoError;
+            texto.fontSize = 16;
             borrar();
+            audioPanel.GetComponent<PanelAudio>().IncorrectCode();
         }
 
     }
@@ -135,6 +163,7 @@ public class panelNumeros : MonoBehaviour {
     {
         borrar();
         texto.GetComponent<TextMesh>().text = textoEspera;
+        texto.fontSize = 16;
     }
 
     public void aumentarCod( int num)
@@ -143,10 +172,13 @@ public class panelNumeros : MonoBehaviour {
         index++;  // Aumentamos el indice para indicar que vamos a poner un * más por pantalla
 
         texto.GetComponent<TextMesh>().text = "";  // inicializamos el mensaje de texto
+        texto.fontSize = 16;
 
         for ( int i = 0; i < index; i++)
         {
             texto.GetComponent<TextMesh>().text += "*";  //segun los elementos que vayan entrando ira mostrando *
+            texto.fontSize = 45;
+            audioPanel.GetComponent<PanelAudio>().IncorrectCode();
         }
     }
 

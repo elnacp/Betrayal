@@ -8,6 +8,7 @@ public class AudioBrooke : MonoBehaviour
     public GameObject alex;
     public GameObject mensajeTubo;
     public GameObject jane;
+    public GameObject panel;
 
     AudioSource brooke;
 
@@ -118,6 +119,11 @@ public class AudioBrooke : MonoBehaviour
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
                 break;
+            case 19:
+                brooke.clip = audio19;
+                brooke.Play();
+                panel.SetActive(true);
+                break;
 
 
             //DIALOGO EN INGLES
@@ -145,6 +151,11 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio65;
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
+                break;
+            case 66:
+                brooke.clip = audio66;
+                brooke.Play();
+                panel.SetActive(true);
                 break;
         }
 
