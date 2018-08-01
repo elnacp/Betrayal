@@ -31,7 +31,7 @@ public class PanelAudio : MonoBehaviour {
 
     public void ClickCode()
     {
-        panel.clip = correct;
+        panel.clip = click;
         panel.Play();
     }
 

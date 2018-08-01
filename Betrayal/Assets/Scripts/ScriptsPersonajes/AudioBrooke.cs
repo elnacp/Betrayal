@@ -124,6 +124,13 @@ public class AudioBrooke : MonoBehaviour
                 brooke.Play();
                 panel.SetActive(true);
                 break;
+            case 20:
+                brooke.clip = audio20;
+                brooke.Play();
+                break;
+
+
+          
 
 
             //DIALOGO EN INGLES
@@ -156,6 +163,10 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio66;
                 brooke.Play();
                 panel.SetActive(true);
+                break;
+            case 67:
+                brooke.clip = audio67;
+                brooke.Play();
                 break;
         }
 

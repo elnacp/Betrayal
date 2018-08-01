@@ -8,6 +8,8 @@ using System.Collections.Generic;
 //CONTROLA EL KEYPAD
 public class panelNumeros : MonoBehaviour {
     public int[] codigo;
+    public GameObject brooke;
+
 
     public GameObject numero1;
     public GameObject numero2;
@@ -20,9 +22,10 @@ public class panelNumeros : MonoBehaviour {
     public GameObject numero9;
 
     public GameObject audioPanel;
+    
 
-
-
+    public bool codiInsertat = false;
+    public bool codiIncorrecte = false;
 
     public TextMesh texto;
     public GameObject aceptar;
@@ -132,6 +135,8 @@ public class panelNumeros : MonoBehaviour {
                 texto.GetComponent<TextMesh>().text = textoAcertado;
                 texto.fontSize = 16;
                 audioPanel.GetComponent<PanelAudio>().CorrectCode();
+                codiInsertat = true;
+                
             }
             else
             {
@@ -149,6 +154,8 @@ public class panelNumeros : MonoBehaviour {
             texto.fontSize = 16;
             borrar();
             audioPanel.GetComponent<PanelAudio>().IncorrectCode();
+            codiIncorrecte = true;
+            darPista();
         }
 
     }
@@ -178,9 +185,29 @@ public class panelNumeros : MonoBehaviour {
         {
             texto.GetComponent<TextMesh>().text += "*";  //segun los elementos que vayan entrando ira mostrando *
             texto.fontSize = 45;
-            audioPanel.GetComponent<PanelAudio>().IncorrectCode();
+            audioPanel.GetComponent<PanelAudio>().ClickCode();
         }
     }
 
 
+    //EN EL CASO DE ERROR DAMOS PISTA
+    private void darPista()
+    {
+        if(variablesGlobals.lang.Equals("español"))
+        {
+            brooke.GetComponent<AudioBrooke>().ActivateAudio(20);
+        }
+        if (variablesGlobals.lang.Equals("english"))
+        {
+            brooke.GetComponent<AudioBrooke>().ActivateAudio(67);
+        }
+
+
+    }
+
+
+
 }
+
+
+
