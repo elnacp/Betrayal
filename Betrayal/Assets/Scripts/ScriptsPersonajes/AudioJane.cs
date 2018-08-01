@@ -9,6 +9,7 @@ public class AudioJane : MonoBehaviour
     public GameObject alex;
     public GameObject pantallaTele;
     
+    
 
 
     public AudioSource jane;
@@ -36,7 +37,7 @@ public class AudioJane : MonoBehaviour
     private int personatge;
     private int numeroAudio;
 
-
+    public GameObject mensaje;
 
     // Use this for initialization
     void Start()
@@ -74,6 +75,7 @@ public class AudioJane : MonoBehaviour
         }
         Debug.Log(numeroAudio);
         personatge = 2;
+        mensaje.GetComponent<MensajePrueba>().TitleTest(3, lang);
         Invoke("PedirActivar", 3);
 
         

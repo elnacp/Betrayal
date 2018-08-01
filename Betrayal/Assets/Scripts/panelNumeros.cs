@@ -136,7 +136,9 @@ public class panelNumeros : MonoBehaviour {
                 texto.fontSize = 16;
                 audioPanel.GetComponent<PanelAudio>().CorrectCode();
                 codiInsertat = true;
-                
+                pruebaFinalizada();
+
+
             }
             else
             {
@@ -200,6 +202,21 @@ public class panelNumeros : MonoBehaviour {
         if (variablesGlobals.lang.Equals("english"))
         {
             brooke.GetComponent<AudioBrooke>().ActivateAudio(67);
+        }
+
+
+    }
+
+
+    private void pruebaFinalizada()
+    {
+        if (variablesGlobals.lang.Equals("español"))
+        {
+            brooke.GetComponent<AudioBrooke>().ActivateAudio(21);
+        }
+        if (variablesGlobals.lang.Equals("english"))
+        {
+            brooke.GetComponent<AudioBrooke>().ActivateAudio(68);
         }
 
 

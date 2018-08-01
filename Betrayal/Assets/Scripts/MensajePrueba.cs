@@ -39,6 +39,22 @@ public class MensajePrueba : MonoBehaviour {
                         prueba.text = "2a Prueba: ";
                         mision.text = "¿Dónde esta la luz?";
                         break;
+                    case 3:
+                        prueba.text = "3a Prueba: Caja Fuerte";
+                        mision.text = "Introduce la combinación";
+                        break;
+                    case 4:
+                        prueba.text = "4a Prueba: Desactivar Bomba";
+                        mision.text = "";
+                        break;
+                    case 41:
+                        prueba.text = "4a Prueba: Desactivar Bomba";
+                        mision.text = "¿Dónde esta la figura?";
+                        break;
+                    case 42:
+                        prueba.text = "4a Prueba: Desactivar Bomba";
+                        mision.text = "¿Cables?";
+                        break;
                 }
                 
                 break;
@@ -53,6 +69,22 @@ public class MensajePrueba : MonoBehaviour {
 
                         prueba.text = "2nd Test:";
                         mision.text = "Where is the light?";
+                        break;
+                    case 3:
+                        prueba.text = "3rd Test: Safe";
+                        mision.text = "Enter the combination";
+                        break;
+                    case 4:
+                        prueba.text = "4th Test: Deactivate Bomb";
+                        mision.text = "";
+                        break;
+                    case 41:
+                        prueba.text = "4th Test: Deactivate Bomb";
+                        mision.text = "Where is the figure?";
+                        break;
+                    case 42:
+                        prueba.text = "4th Test: Deactivate Bomb";
+                        mision.text = "Cables?";
                         break;
                 }
                 break;
