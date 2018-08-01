@@ -11,6 +11,7 @@ public class variablesGlobals : MonoBehaviour {
     static public bool prova2 = false;
     static public bool prova41 = true;
     static public bool prova42 = false;
+    static public bool prova43 = false;
 
     static public bool entroEscena = false;
     

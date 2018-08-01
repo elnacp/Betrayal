@@ -55,6 +55,10 @@ public class MensajePrueba : MonoBehaviour {
                         prueba.text = "4a Prueba: Desactivar Bomba";
                         mision.text = "¿Cables?";
                         break;
+                    case 43:
+                        prueba.text = "4a Prueba: Desactivar Bomba";
+                        mision.text = "¿Dónde están las tenazas?";
+                        break;
                 }
                 
                 break;
@@ -85,6 +89,10 @@ public class MensajePrueba : MonoBehaviour {
                     case 42:
                         prueba.text = "4th Test: Deactivate Bomb";
                         mision.text = "Cables?";
+                        break;
+                    case 43:
+                        prueba.text = "4th Test: Deactivate Bomb";
+                        mision.text = "Where are the pincers?";
                         break;
                 }
                 break;

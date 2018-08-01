@@ -150,6 +150,13 @@ public class AudioAlex : MonoBehaviour {
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
                 break;
+            case 45:
+                alex.clip = audio45;
+                alex.Play();
+                numeroAudio = 29;
+                personatge = 2;
+                Invoke("PedirActivar", alex.clip.length);
+                break;
 
             //DIALOGO EN INGLES
             case 48:
@@ -192,6 +199,13 @@ public class AudioAlex : MonoBehaviour {
                 alex.clip = audio54;
                 alex.Play();
                 numeroAudio = 69;
+                personatge = 2;
+                Invoke("PedirActivar", alex.clip.length);
+                break;
+            case 55:
+                alex.clip = audio55;
+                alex.Play();
+                numeroAudio = 72;
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
                 break;
