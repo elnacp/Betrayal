@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class variablesGlobals : MonoBehaviour {
 
-    static public string lang = "español";
+    static public string lang = "english";
     static public bool english = false;
     static public bool spanish = true;
     static public bool prova1 = false;
     static public bool prova2 = false;
-    static public bool prova41 = true;
+    static public bool prova41 = false;
     static public bool prova42 = false;
-    static public bool prova43 = false;
+    static public bool prova43 = true;
+    static public bool prova5 = false;
 
     static public bool entroEscena = false;
     

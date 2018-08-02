@@ -68,7 +68,7 @@ public class AudioAlex : MonoBehaviour {
             numeroAudio = 15;
             Invoke("PedirActivar", alex.clip.length);*/
             
-            //GetComponent<AudioBrooke>().ActivateAudioBrooke(15); 
+          
             
 
         }
@@ -157,6 +157,12 @@ public class AudioAlex : MonoBehaviour {
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
                 break;
+            case 46:
+                alex.clip = audio46;
+                alex.Play();
+                break;
+
+           
 
             //DIALOGO EN INGLES
             case 48:
@@ -208,6 +214,10 @@ public class AudioAlex : MonoBehaviour {
                 numeroAudio = 72;
                 personatge = 2;
                 Invoke("PedirActivar", alex.clip.length);
+                break;
+            case 56:
+                alex.clip = audio56;
+                alex.Play();
                 break;
 
         }

@@ -6,12 +6,14 @@ public class traspasoObjetos : MonoBehaviour {
 
     public GameObject brooke;
     public GameObject key;
+    public GameObject cono;
+    public GameObject alicates;
 
     
    
 
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
         
@@ -41,6 +43,24 @@ public class traspasoObjetos : MonoBehaviour {
                     }
                     variablesGlobals.prova41 = false;
                     variablesGlobals.prova42 = true;
+                    Destroy(cono);
+                }
+                break;
+            case "Alicates":
+                if(variablesGlobals.prova43)
+                {
+                    if(variablesGlobals.lang.Equals("español"))
+                    {
+                        brooke.GetComponent<AudioBrooke>().ActivateAudio(31);
+                    }
+                    if (variablesGlobals.lang.Equals("english"))
+                    {
+                        brooke.GetComponent<AudioBrooke>().ActivateAudio(74);
+                    }
+                    variablesGlobals.prova43 = false;
+                    variablesGlobals.prova5 = true;
+                    Destroy(alicates);
+
                 }
                 break;
             default:
