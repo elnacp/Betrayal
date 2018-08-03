@@ -8,8 +8,12 @@ public class AudioJane : MonoBehaviour
     public GameObject brooke;
     public GameObject alex;
     public GameObject pantallaTele;
-    
-    
+    public GameObject panellFinal;
+    public GameObject forgive;
+    public GameObject perdonar;
+    public GameObject abandon;
+    public GameObject abandonar;
+
 
 
     public AudioSource jane;
@@ -105,6 +109,9 @@ public class AudioJane : MonoBehaviour
             case 3:
                 jane.clip = audio3;
                 jane.Play();
+                panellFinal.SetActive(true);
+                perdonar.SetActive(true);
+                abandonar.SetActive(true);
                 break;
 
        
@@ -127,6 +134,9 @@ public class AudioJane : MonoBehaviour
             case 10:
                 jane.clip = audio10;
                 jane.Play();
+                panellFinal.SetActive(true);
+                forgive.SetActive(true);
+                abandon.SetActive(true);
                 break;
         }
     }
