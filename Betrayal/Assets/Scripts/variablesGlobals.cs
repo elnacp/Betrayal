@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class variablesGlobals : MonoBehaviour {
 
-    static public string lang = "english";
+    static public string lang = "español";
     static public bool english = false;
     static public bool spanish = true;
     static public bool prova1 = false;

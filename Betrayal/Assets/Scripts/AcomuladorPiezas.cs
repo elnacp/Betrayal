@@ -7,7 +7,7 @@ public class AcomuladorPiezas : MonoBehaviour {
     private int acomulador = 7;  // el acomulador de piezas del puzle
     public GameObject alex;      // audio de alex
     public GameObject pieza10;   // pieza del puzle que falta
-
+    public GameObject cuadro;
 
     
 
@@ -15,7 +15,7 @@ public class AcomuladorPiezas : MonoBehaviour {
     {
         
         acomulador++;
-        Debug.Log(acomulador);
+        
         if (acomulador == 23)
         {
             if (variablesGlobals.lang.Equals("español"))
@@ -31,8 +31,15 @@ public class AcomuladorPiezas : MonoBehaviour {
 
         if(acomulador == 24)
         {
-            Debug.Log("HELLO");
-            //se cambia el puzle por una imagen
+            cuadro.SetActive(true);
+            if (variablesGlobals.lang.Equals("español"))
+            {
+                alex.GetComponent<AudioAlex>().ActivateAudio(42);
+            }
+            if (variablesGlobals.lang.Equals("english"))
+            {
+                alex.GetComponent<AudioAlex>().ActivateAudio(58);
+            }
         }
 
 

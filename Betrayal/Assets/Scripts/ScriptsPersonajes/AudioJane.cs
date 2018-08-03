@@ -102,6 +102,10 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 Invoke("PedirDesactivar", jane.clip.length + 2);
                 break;
+            case 3:
+                jane.clip = audio3;
+                jane.Play();
+                break;
 
        
 
@@ -119,6 +123,10 @@ public class AudioJane : MonoBehaviour
                 jane.clip = audio9;
                 jane.Play();
                 Invoke("PedirDesactivar", jane.clip.length +2);
+                break;
+            case 10:
+                jane.clip = audio10;
+                jane.Play();
                 break;
         }
     }
