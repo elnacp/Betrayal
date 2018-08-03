@@ -25,6 +25,14 @@ public class MensajesTubo : MonoBehaviour {
 
     }
 
+    public void QuitarMensaje()
+    {
+
+        flecha.SetActive(false);
+        m_english.SetActive(false);
+        m_español.SetActive(false);
+    }
+
 
 
 }

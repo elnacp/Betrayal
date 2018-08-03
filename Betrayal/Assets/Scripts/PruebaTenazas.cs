@@ -12,14 +12,11 @@ public class PruebaTenazas : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entro");
-        Debug.Log(other.name);
         if (variablesGlobals.prova43)
         {
             if (other.name == "Cuchillo")
             {
                 destruir = true;
-                Debug.Log("destruyo");
                 alicates.SetActive(true);
             }
         }

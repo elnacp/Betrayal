@@ -11,6 +11,12 @@ public class AudioBrooke : MonoBehaviour
     public GameObject panel;
     public GameObject instrucciones;
 
+    public GameObject mesaPuzle;
+    public GameObject colosionadores;
+    public GameObject pieza1;
+    public GameObject pieza2;
+    public GameObject puzleNointeractivo;
+
     AudioSource brooke;
 
     //AUDIOS EN ESPAÑOL
@@ -122,6 +128,7 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio18;
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
+                mensajeTubo.GetComponent<MensajesTubo>().QuitarMensaje();
                 break;
             case 19:
                 brooke.clip = audio19;
@@ -173,6 +180,8 @@ public class AudioBrooke : MonoBehaviour
             case 31:
                 brooke.clip = audio31;
                 brooke.Play();
+                apareixPuzle();
+                mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
                 break;
 
 
@@ -204,6 +213,7 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio65;
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
+                mensajeTubo.GetComponent<MensajesTubo>().QuitarMensaje();
                 break;
             case 66:
                 brooke.clip = audio66;
@@ -255,6 +265,8 @@ public class AudioBrooke : MonoBehaviour
             case 74:
                 brooke.clip = audio74;
                 brooke.Play();
+                apareixPuzle();
+                mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
                 break;
 
         }
@@ -263,6 +275,15 @@ public class AudioBrooke : MonoBehaviour
     }
 
 
+
+    private void apareixPuzle()
+    {
+        mesaPuzle.SetActive(true);
+        colosionadores.SetActive(true);
+        pieza1.SetActive(true);
+        pieza2.SetActive(true);
+        puzleNointeractivo.SetActive(true);
+    }
 
     
 

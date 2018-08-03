@@ -8,14 +8,7 @@ public class milkPuzle : MonoBehaviour {
     public GameObject casilla; // casilla dnde tiene que ir la pieza
     public GameObject show;  // pieza que se tiene que mostrar
     private bool destruir = false;
-
-    public GameObject objecte;
-    private acumuladorPuzle acum;
-    private int num;
-
-   
-
-
+    public GameObject acomuladorPiezas;
 
     private void Update()
     {
@@ -31,9 +24,7 @@ public class milkPuzle : MonoBehaviour {
         {
             show.SetActive(true);
             destruir = true;
-
-            objecte.GetComponent<acumuladorPuzle>().acomulador++;
-            objecte.GetComponent<acumuladorPuzle>().entro = true;
+            acomuladorPiezas.GetComponent<AcomuladorPiezas>().aumentarAcomulador();
    
         }
     }
