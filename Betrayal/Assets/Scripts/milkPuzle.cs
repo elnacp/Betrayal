@@ -9,6 +9,8 @@ public class milkPuzle : MonoBehaviour {
     public GameObject show;  // pieza que se tiene que mostrar
     private bool destruir = false;
     public GameObject acomuladorPiezas;
+    public bool isInside = false;
+
 
     private void Update()
     {
@@ -22,10 +24,14 @@ public class milkPuzle : MonoBehaviour {
     {
         if (other.name == casilla.name)
         {
-            show.SetActive(true);
-            destruir = true;
-            acomuladorPiezas.GetComponent<AcomuladorPiezas>().aumentarAcomulador();
-   
+            if (!isInside)
+            {
+                show.SetActive(true);
+                destruir = true;
+                acomuladorPiezas.GetComponent<AcomuladorPiezas>().aumentarAcomulador();
+                isInside = true;
+            }
+            
         }
     }
 

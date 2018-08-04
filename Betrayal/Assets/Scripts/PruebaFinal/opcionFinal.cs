@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class opcionFinal : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void opcionAbandonar()
+    {
+        Debug.Log("OPCION ABANDONAR");
+    }
+
+    public void opcionPerdonar()
+    {
+        Debug.Log("OPCION PERDONAR");
+    }
+
+
+
 }
