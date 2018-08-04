@@ -61,6 +61,9 @@ public class AudioJane : MonoBehaviour
             case 2: // BROOKE
                 brooke.GetComponent<AudioBrooke>().ActivateAudio(numeroAudio);
                 break;
+            case 3:
+                ActivateAudio(numeroAudio);
+                break;
         }
     }
 
@@ -112,6 +115,29 @@ public class AudioJane : MonoBehaviour
                 panellFinal.SetActive(true);
                 perdonar.SetActive(true);
                 abandonar.SetActive(true);
+                numeroAudio = 4;
+                personatge = 3;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 4:
+                jane.clip = audio4;
+                jane.Play();
+                //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
+                numeroAudio = 22;
+                personatge = 2;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 5:
+                jane.clip = audio5;
+                jane.Play();
+                numeroAudio = 25;
+                personatge = 2;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 6:
+                //SE ABREN LAS PUERTAS
+                jane.clip = audio6;
+                jane.Play();              
                 break;
 
        
@@ -137,7 +163,37 @@ public class AudioJane : MonoBehaviour
                 panellFinal.SetActive(true);
                 forgive.SetActive(true);
                 abandon.SetActive(true);
+                numeroAudio = 11;
+                personatge = 3;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 11:
+                jane.clip = audio11;
+                jane.Play();
+                //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
+                numeroAudio = 75;
+                personatge = 2;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 12:
+                jane.clip = audio12;
+                jane.Play();
+                numeroAudio = 61;
+                personatge = 2;
+                Invoke("PedirActivar", jane.clip.length);
+                break;
+            case 13:
+                //SE ABREN LAS PUERTAS
+                jane.clip = audio13;
+                jane.Play();
                 break;
         }
     }
+
+    private void activarReloj()
+    {
+         // ACTIVA EL RELOJ DURANTE 2 MIN
+
+    }
+
 }

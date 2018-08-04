@@ -172,6 +172,26 @@ public class AudioAlex : MonoBehaviour {
                 personatge = 3;
                 Invoke("PedirActivar", alex.clip.length);
                 break;
+            case 43:
+                if (!variablesGlobals.opcion)
+                {
+                    alex.clip = audio43;
+                    alex.Play();
+                    numeroAudio = 23;
+                    personatge = 2;
+                    Invoke("PedirActivar", alex.clip.length);
+                }
+                break;
+            case 44:
+                if (!variablesGlobals.opcion)
+                {
+                    alex.clip = audio44;
+                    alex.Play();
+                    numeroAudio = 24;
+                    personatge = 2;
+                    Invoke("PedirActivar", alex.clip.length);
+                }
+                break;
            
 
             //DIALOGO EN INGLES
@@ -239,6 +259,26 @@ public class AudioAlex : MonoBehaviour {
                 numeroAudio = 10;
                 personatge = 3;
                 Invoke("PedirActivar", alex.clip.length);
+                break;
+            case 59:
+                if (!variablesGlobals.opcion)
+                {
+                    alex.clip = audio59;
+                    alex.Play();
+                    numeroAudio = 76;
+                    personatge = 2;
+                    Invoke("PedirActivar", alex.clip.length);
+                }
+                break;
+            case 60:
+                if (!variablesGlobals.opcion)
+                {
+                    alex.clip = audio60;
+                    alex.Play();
+                    numeroAudio = 77;
+                    personatge = 2;
+                    Invoke("PedirActivar", alex.clip.length);
+                }
                 break;
 
         }

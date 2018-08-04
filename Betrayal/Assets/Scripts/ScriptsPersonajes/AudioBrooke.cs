@@ -91,6 +91,7 @@ public class AudioBrooke : MonoBehaviour
                 ActivateAudio(numeroAudio);
                 break;
             case 3: //JANE
+                jane.GetComponent<AudioJane>().ActivateAudio(numeroAudio);
                 break;
         }
     }
@@ -183,6 +184,46 @@ public class AudioBrooke : MonoBehaviour
                 apareixPuzle();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
                 break;
+            case 22:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio22;
+                    brooke.Play();
+                    numeroAudio = 43;
+                    personatge = 1;
+                    Invoke("PedirActivar", brooke.clip.length);
+                }
+                
+                break;
+            case 23:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio23;
+                    brooke.Play();
+                    numeroAudio = 44;
+                    personatge = 1;
+                    Invoke("PedirActivar", brooke.clip.length);
+                }
+                break;
+            case 24:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio24;
+                    brooke.Play();
+                }
+                break;
+            case 25:
+                brooke.clip = audio25;
+                brooke.Play();
+                //SE APAGAN LAS LUCES DE LA HABITACION
+                break;
+            case 32:
+                brooke.clip = audio32;
+                brooke.Play();
+                numeroAudio = 6;
+                personatge = 3;
+                Invoke("PedirActivar", brooke.clip.length);
+                break;
 
 
 
@@ -267,6 +308,46 @@ public class AudioBrooke : MonoBehaviour
                 brooke.Play();
                 apareixPuzle();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
+                break;
+            case 75:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio75;
+                    brooke.Play();
+                    numeroAudio = 59;
+                    personatge = 1;
+                    Invoke("PedirActivar", brooke.clip.length);
+                }
+                
+                break;
+            case 76:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio76;
+                    brooke.Play();
+                    numeroAudio = 60;
+                    personatge = 1;
+                    Invoke("PedirActivar", brooke.clip.length);
+                }
+                break;
+            case 77:
+                if (!variablesGlobals.opcion)
+                {
+                    brooke.clip = audio77;
+                    brooke.Play();
+                }
+                break;
+            case 61:
+                brooke.clip = audio61;
+                brooke.Play();
+                //SE APAGAN LAS LUCES DE LA HABITACION
+                break;
+            case 78:
+                brooke.clip = audio78;
+                brooke.Play();
+                numeroAudio = 13;
+                personatge = 3;
+                Invoke("PedirActivar", brooke.clip.length);
                 break;
 
         }
