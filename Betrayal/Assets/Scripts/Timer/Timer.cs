@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour {
     public Text text;
     float theTime;
     public float speed;
-    public float time = 840;
+    public float time;
 
     void Start()
     {
@@ -17,14 +17,23 @@ public class Timer : MonoBehaviour {
     }
     void Update()
     {
-        time -= Time.deltaTime * speed;
-        string minutes = ((time % 3600) / 60).ToString("00");
-        string seconds = (time % 60).ToString("00");
-        text.text = minutes + ":" + seconds;
-        /*theTime = Time.deltaTime * speed;
-        string minutes = ((theTime % 3600)/60).ToString("00");
-        string seconds = (theTime % 60).ToString("00");
-        text.text = minutes + ":" + seconds;*/
+       if( variablesGlobals.prova5 == true)
+        {
+            if (time >= 0)
+            {
+                time -= Time.deltaTime * speed;
+                string minutes = ((time % 3600) / 60).ToString("00");
+                string seconds = (time % 60).ToString("00");
+                text.text = minutes + ":" + seconds;
+            }
+
+            if (time < 0)
+            {
+                text.text = "FINAAL";
+            }
+        }
+        
+
 
     }
 
