@@ -91,6 +91,18 @@ public class AudioJane : MonoBehaviour
         
     }
 
+    public void DesactivarTele()
+    {
+        pantallaTele.GetComponent<TelevisorAudio>().DesactivarTelevisor();
+        pantallaTele.SetActive(false);
+    }
+
+    public void ActivarTele()
+    {
+        pantallaTele.SetActive(true);
+        pantallaTele.GetComponent<TelevisorAudio>().ActivarTelevisor();
+    }
+
 
     public void ActivateAudio(int num)
     {
@@ -99,8 +111,7 @@ public class AudioJane : MonoBehaviour
 
             //AUDIO ESPAÑOL
             case 1:
-                pantallaTele.SetActive(true);
-                pantallaTele.GetComponent<TelevisorAudio>().ActivarTelevisor();
+                ActivarTele();
                 jane.clip = audio1;
                 jane.Play();
                 numeroAudio = 39;
@@ -115,6 +126,7 @@ public class AudioJane : MonoBehaviour
                 Invoke("PedirDesactivar", jane.clip.length + 2);               
                 break;
             case 3:
+                ActivarTele();
                 jane.clip = audio3;
                 jane.Play();
                 panellFinal.SetActive(true);
@@ -122,6 +134,7 @@ public class AudioJane : MonoBehaviour
                 abandonar.SetActive(true);
                 numeroAudio = 4;
                 personatge = 3;
+                variablesGlobals.playing = false;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 4:
@@ -130,6 +143,9 @@ public class AudioJane : MonoBehaviour
                 //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
                 numeroAudio = 22;
                 personatge = 2;
+                
+                variablesGlobals.time = 120;
+                variablesGlobals.playing = true;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 5:
@@ -145,19 +161,20 @@ public class AudioJane : MonoBehaviour
                 jane.Play();              
                 break;
             case 7:
+                ActivarTele();
                 jane.clip = audio7;
                 jane.Play();
                 d1.color = Color.red;
                 d2.color = Color.red;
                 d3.color = Color.red;
                 d4.color = Color.red;
+                Invoke("DesactivarTele", jane.clip.length);
                 break;
        
 
 
             case 8:
-                pantallaTele.SetActive(true);
-                pantallaTele.GetComponent<TelevisorAudio>().ActivarTelevisor();
+                ActivarTele();
                 jane.clip = audio8;
                 jane.Play();
                 numeroAudio = 53;
@@ -172,6 +189,7 @@ public class AudioJane : MonoBehaviour
                 Invoke("PedirDesactivar", jane.clip.length +2);
                 break;
             case 10:
+                ActivarTele();
                 jane.clip = audio10;
                 jane.Play();
                 panellFinal.SetActive(true);
@@ -179,6 +197,7 @@ public class AudioJane : MonoBehaviour
                 abandon.SetActive(true);
                 numeroAudio = 11;
                 personatge = 3;
+                variablesGlobals.playing = false;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 11:
@@ -187,6 +206,9 @@ public class AudioJane : MonoBehaviour
                 //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
                 numeroAudio = 75;
                 personatge = 2;
+                
+                variablesGlobals.time = 120;
+                variablesGlobals.playing = true;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 12:
@@ -202,12 +224,14 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 break;
             case 14:
+                ActivarTele();
                 jane.clip = audio14;
                 jane.Play();
                 d1.color = Color.red;
                 d2.color = Color.red;
                 d3.color = Color.red;
                 d4.color = Color.red;
+                Invoke("DesactivarTele", jane.clip.length);
                 break;
         }
     }

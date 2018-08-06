@@ -10,10 +10,12 @@ public class Timer : MonoBehaviour {
     public float speed;
     private float time;
     public GameObject jane;
+    public GameObject alex;
+    public GameObject brooke;
 
     void Start()
     {
-        time = variablesGlobals.time + 10;
+        time = variablesGlobals.time;
         text = GetComponent<Text>();
     }
     void Update()
@@ -48,7 +50,8 @@ public class Timer : MonoBehaviour {
                 {
                     jane.GetComponent<AudioJane>().ActivateAudio(14);
                 }
-
+                alex.GetComponent<AudioAlex>().Buidar();
+                brooke.GetComponent<AudioBrooke>().Buidar();
 
             }
         }

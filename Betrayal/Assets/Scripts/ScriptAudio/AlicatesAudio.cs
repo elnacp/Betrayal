@@ -15,22 +15,26 @@ public class AlicatesAudio : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if( other.tag == "hand")
+        if (!variablesGlobals.finalPartida)
         {
-            if(!isInside)
+            if (other.tag == "hand")
             {
-                if (variablesGlobals.lang.Equals("español"))
+                if (!isInside)
                 {
-                    alex.GetComponent<AudioAlex>().ActivateAudio(46);
+                    if (variablesGlobals.lang.Equals("español"))
+                    {
+                        alex.GetComponent<AudioAlex>().ActivateAudio(46);
+                    }
+                    if (variablesGlobals.lang.Equals("english"))
+                    {
+                        alex.GetComponent<AudioAlex>().ActivateAudio(56);
+                    }
+                    isInside = true;
                 }
-                if (variablesGlobals.lang.Equals("english"))
-                {
-                    alex.GetComponent<AudioAlex>().ActivateAudio(56);
-                }
-                isInside = true;
+
             }
-            
         }
+        
 
     }
 

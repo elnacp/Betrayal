@@ -15,74 +15,75 @@ public class traspasoObjetos : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
-        
-        switch (other.name)
+        if(!variablesGlobals.finalPartida)
         {
-            case "Llave":
-                if( variablesGlobals.prova1 == true)
-                {
-                    if (variablesGlobals.lang.Equals("español"))
+            switch (other.name)
+            {
+                case "Llave":
+                    if (variablesGlobals.prova1 == true)
                     {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(18);
+                        if (variablesGlobals.lang.Equals("español"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(18);
+                        }
+                        if (variablesGlobals.lang.Equals("english"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(65);
+                        }
+                        variablesGlobals.prova1 = true;
                     }
-                    if (variablesGlobals.lang.Equals("english"))
-                    {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(65);
-                    }
-                    variablesGlobals.prova1 = true;
-                }
-                
-                break;
-            case "ConoRojo":
-                if (variablesGlobals.prova41)
-                {
-                    if (variablesGlobals.lang.Equals("español"))
-                    {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(28);
-                    }
-                    if (variablesGlobals.lang.Equals("english"))
-                    {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(71);
-                    }
-                    variablesGlobals.prova41 = false;
-                    variablesGlobals.prova42 = true;
-                    Destroy(cono);
-                }
-                break;
-            case "Alicates":
-                if(variablesGlobals.prova43)
-                {
-                    if(variablesGlobals.lang.Equals("español"))
-                    {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(31);
-                    }
-                    if (variablesGlobals.lang.Equals("english"))
-                    {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(74);
-                    }
-                    variablesGlobals.prova43 = false;
-                    variablesGlobals.prova5 = true;
-                    Destroy(alicates);
 
-                }
-                break;
-            default:
-                if(variablesGlobals.prova41)
-                {
-                    if (variablesGlobals.lang.Equals("español"))
+                    break;
+                case "ConoRojo":
+                    if (variablesGlobals.prova41)
                     {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(27);
+                        if (variablesGlobals.lang.Equals("español"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(28);
+                        }
+                        if (variablesGlobals.lang.Equals("english"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(71);
+                        }
+                        variablesGlobals.prova41 = false;
+                        variablesGlobals.prova42 = true;
+                        Destroy(cono);
                     }
-                    if (variablesGlobals.lang.Equals("english"))
+                    break;
+                case "Alicates":
+                    if (variablesGlobals.prova43)
                     {
-                        brooke.GetComponent<AudioBrooke>().ActivateAudio(70);
+                        if (variablesGlobals.lang.Equals("español"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(31);
+                        }
+                        if (variablesGlobals.lang.Equals("english"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(74);
+                        }
+                        variablesGlobals.prova43 = false;
+                        variablesGlobals.prova5 = true;
+                        Destroy(alicates);
+
                     }
-                }
-
-
-                break;
+                    break;
+                default:
+                    if (variablesGlobals.prova41)
+                    {
+                        if (variablesGlobals.lang.Equals("español"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(27);
+                        }
+                        if (variablesGlobals.lang.Equals("english"))
+                        {
+                            brooke.GetComponent<AudioBrooke>().ActivateAudio(70);
+                        }
+                    }
+                    break;
+            }
         }
+        
+        
         
       
 

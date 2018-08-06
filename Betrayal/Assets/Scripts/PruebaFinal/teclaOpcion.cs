@@ -8,6 +8,7 @@ public class teclaOpcion : MonoBehaviour {
     public Sprite onClick;
     public Sprite click;
     private bool isInside = false;
+    public GameObject opcionFinal;
 
     public GameObject tecla;
     public GameObject opcion;
@@ -26,38 +27,45 @@ public class teclaOpcion : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Three)) // comprueba si se mantiene dentro y clica la A 
+        if (!opcionFinal.GetComponent<opcionFinal>().isClick)
         {
-            if (!isInside)
+            if (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Three)) // comprueba si se mantiene dentro y clica la A 
             {
-
-                tecla.GetComponent<SpriteRenderer>().sprite = click;
-
-                if (tecla.name == "Abandon" || tecla.name == "Abandonar")
+                if (!isInside)
                 {
-                    opcion.GetComponent<opcionFinal>().opcionAbandonar();
-                }
-                if (tecla.name == "Forgive" || tecla.name == "Perdonar")
-                {
-                    opcion.GetComponent<opcionFinal>().opcionPerdonar();
-                }
 
-                isInside = true;
+                    tecla.GetComponent<SpriteRenderer>().sprite = click;
 
+                    if (tecla.name == "Abandon" || tecla.name == "Abandonar")
+                    {
+                        opcion.GetComponent<opcionFinal>().opcionAbandonar();
+                    }
+                    if (tecla.name == "Forgive" || tecla.name == "Perdonar")
+                    {
+                        opcion.GetComponent<opcionFinal>().opcionPerdonar();
+                    }
+
+                    isInside = true;
+
+                }
             }
         }
+        
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "hand")
+        if (!opcionFinal.GetComponent<opcionFinal>().isClick)
         {
-            if (!isInside)
+            if (other.tag == "hand")
             {
-                tecla.GetComponent<SpriteRenderer>().sprite = normal;
+                if (!isInside)
+                {
+                    tecla.GetComponent<SpriteRenderer>().sprite = normal;
+                }
+
             }
-            
         }
     }
 

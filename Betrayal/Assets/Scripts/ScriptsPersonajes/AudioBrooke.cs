@@ -188,6 +188,7 @@ public class AudioBrooke : MonoBehaviour
                 mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
                 break;
             case 22:
+                jane.GetComponent<AudioJane>().DesactivarTele();
                 if (!variablesGlobals.opcion)
                 {
                     brooke.clip = audio22;
@@ -316,6 +317,7 @@ public class AudioBrooke : MonoBehaviour
                 mensaje.GetComponent<MensajePrueba>().TitleTest(5, lang);
                 break;
             case 75:
+                jane.GetComponent<AudioJane>().DesactivarTele();
                 if (!variablesGlobals.opcion)
                 {
                     brooke.clip = audio75;
@@ -372,6 +374,16 @@ public class AudioBrooke : MonoBehaviour
         puzleNointeractivo.SetActive(true);
     }
 
-    
+    public void desapareixPuzle()
+    {
+        colosionadores.SetActive(false);
+        puzleNointeractivo.SetActive(false);
+    }
+
+    public void Buidar()
+    {
+        brooke.clip = null;
+    }
+
 
 }

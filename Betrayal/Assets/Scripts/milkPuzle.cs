@@ -22,17 +22,21 @@ public class milkPuzle : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == casilla.name)
+        if (!variablesGlobals.finalPartida)
         {
-            if (!isInside)
+            if (other.name == casilla.name)
             {
-                show.SetActive(true);
-                destruir = true;
-                acomuladorPiezas.GetComponent<AcomuladorPiezas>().aumentarAcomulador();
-                isInside = true;
+                if (!isInside)
+                {
+                    show.SetActive(true);
+                    destruir = true;
+                    acomuladorPiezas.GetComponent<AcomuladorPiezas>().aumentarAcomulador();
+                    isInside = true;
+                }
+
             }
-            
         }
+        
     }
 
 

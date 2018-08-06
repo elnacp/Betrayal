@@ -6,6 +6,7 @@ public class opcionFinal : MonoBehaviour {
 
     public GameObject jane;
     public GameObject brooke;
+    public bool isClick;
 
 
     public void opcionAbandonar()
@@ -22,7 +23,7 @@ public class opcionFinal : MonoBehaviour {
             brooke.GetComponent<AudioBrooke>().ActivateAudio(78);
         }
 
-
+        isClick = true;
 
 
 
@@ -41,7 +42,7 @@ public class opcionFinal : MonoBehaviour {
         {
             jane.GetComponent<AudioJane>().ActivateAudio(12);
         }
-        
+        isClick = true;
     }
 
 

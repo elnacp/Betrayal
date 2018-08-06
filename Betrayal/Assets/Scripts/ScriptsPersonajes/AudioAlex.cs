@@ -182,6 +182,7 @@ public class AudioAlex : MonoBehaviour {
                 alex.Play();
                 numeroAudio = 3;
                 personatge = 3;
+                brooke.GetComponent<AudioBrooke>().desapareixPuzle();
                 Invoke("PedirActivar", alex.clip.length);
                 break;
             case 43:
@@ -270,7 +271,9 @@ public class AudioAlex : MonoBehaviour {
                 alex.Play();
                 numeroAudio = 10;
                 personatge = 3;
+                brooke.GetComponent<AudioBrooke>().desapareixPuzle();
                 Invoke("PedirActivar", alex.clip.length);
+                
                 break;
             case 59:
                 if (!variablesGlobals.opcion)
@@ -299,7 +302,10 @@ public class AudioAlex : MonoBehaviour {
     }
 
 
-
+    public void Buidar()
+    {
+        alex.clip = null;
+    }
 
     IEnumerator Wait(int time)
     {
