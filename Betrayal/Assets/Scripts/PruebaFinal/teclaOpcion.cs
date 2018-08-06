@@ -12,6 +12,7 @@ public class teclaOpcion : MonoBehaviour {
 
     public GameObject tecla;
     public GameObject opcion;
+    public bool cliqui;
 
     private void Start()
     {
@@ -27,46 +28,64 @@ public class teclaOpcion : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (!opcionFinal.GetComponent<opcionFinal>().isClick)
+        if(variablesGlobals.prova6)
         {
-            if (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Three)) // comprueba si se mantiene dentro y clica la A 
+            if (!opcionFinal.GetComponent<opcionFinal>().isClick)
             {
-                if (!isInside)
+                if (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Three)) // comprueba si se mantiene dentro y clica la A 
                 {
-
-                    tecla.GetComponent<SpriteRenderer>().sprite = click;
-
-                    if (tecla.name == "Abandon" || tecla.name == "Abandonar")
+                    if (!isInside)
                     {
-                        opcion.GetComponent<opcionFinal>().opcionAbandonar();
-                    }
-                    if (tecla.name == "Forgive" || tecla.name == "Perdonar")
-                    {
-                        opcion.GetComponent<opcionFinal>().opcionPerdonar();
-                    }
 
-                    isInside = true;
+                        tecla.GetComponent<SpriteRenderer>().sprite = click;
 
+                        if (tecla.name == "Abandon" || tecla.name == "Abandonar")
+                        {
+                            opcion.GetComponent<opcionFinal>().opcionAbandonar();
+                            cliqui = true;
+                        }
+                        if (tecla.name == "Forgive" || tecla.name == "Perdonar")
+                        {
+                            opcion.GetComponent<opcionFinal>().opcionPerdonar();
+                            cliqui = true;
+                        }
+
+                        isInside = true;
+
+                    }
                 }
             }
         }
+        
         
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        if (!opcionFinal.GetComponent<opcionFinal>().isClick)
+        if(variablesGlobals.prova6)
         {
-            if (other.tag == "hand")
+            if (!opcionFinal.GetComponent<opcionFinal>().isClick)
             {
-                if (!isInside)
+                if (other.tag == "hand")
                 {
-                    tecla.GetComponent<SpriteRenderer>().sprite = normal;
-                }
+                    if (!isInside)
+                    {
+                        if (!cliqui)
+                        {
+                            tecla.GetComponent<SpriteRenderer>().sprite = normal;
+                        }
+                        if (!cliqui)
+                        {
+                            tecla.GetComponent<SpriteRenderer>().sprite = click;
+                        }
+                    }
 
+                }
             }
         }
+        
+        
     }
 
     

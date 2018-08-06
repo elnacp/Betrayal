@@ -129,9 +129,6 @@ public class AudioJane : MonoBehaviour
                 ActivarTele();
                 jane.clip = audio3;
                 jane.Play();
-                panellFinal.SetActive(true);
-                perdonar.SetActive(true);
-                abandonar.SetActive(true);
                 numeroAudio = 4;
                 personatge = 3;
                 variablesGlobals.playing = false;
@@ -143,8 +140,10 @@ public class AudioJane : MonoBehaviour
                 //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
                 numeroAudio = 22;
                 personatge = 2;
-                
-                variablesGlobals.time = 120;
+                panellFinal.SetActive(true);
+                perdonar.SetActive(true);
+                abandonar.SetActive(true);
+                variablesGlobals.time = 60;
                 variablesGlobals.playing = true;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
@@ -191,10 +190,7 @@ public class AudioJane : MonoBehaviour
             case 10:
                 ActivarTele();
                 jane.clip = audio10;
-                jane.Play();
-                panellFinal.SetActive(true);
-                forgive.SetActive(true);
-                abandon.SetActive(true);
+                jane.Play();                
                 numeroAudio = 11;
                 personatge = 3;
                 variablesGlobals.playing = false;
@@ -203,11 +199,12 @@ public class AudioJane : MonoBehaviour
             case 11:
                 jane.clip = audio11;
                 jane.Play();
-                //SE ACTIVA EL CONTADOR A 2 MIN (FALTA EL RELOJ Y EL AUDIO ) 
+                panellFinal.SetActive(true);
+                forgive.SetActive(true);
+                abandon.SetActive(true);
                 numeroAudio = 75;
                 personatge = 2;
-                
-                variablesGlobals.time = 120;
+                variablesGlobals.time = 60;
                 variablesGlobals.playing = true;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
@@ -240,6 +237,11 @@ public class AudioJane : MonoBehaviour
     {
          // ACTIVA EL RELOJ DURANTE 2 MIN
 
+    }
+
+    public void Buidar()
+    {
+        jane.clip = null;
     }
 
 }

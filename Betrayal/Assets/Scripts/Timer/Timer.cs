@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour {
 
     void Start()
     {
-        time = variablesGlobals.time;
+        
         text = GetComponent<Text>();
     }
     void Update()
@@ -24,9 +24,10 @@ public class Timer : MonoBehaviour {
         if (variablesGlobals.playing) {                                 //Cuando Jane indice el contador empieza a disminuir
             if (time >= 0)                                              //En el caso de que el tiempo siga siendo positivo no es final de partida
             {
-                time -= Time.deltaTime * speed;                         //coje el tiempo y lo va disminuyendo
-                string minutes = ((time % 3600) / 60).ToString("00");   //minutos
-                string seconds = (time % 60).ToString("00");            //segundos
+              
+                variablesGlobals.time -= Time.deltaTime * speed;                         //coje el tiempo y lo va disminuyendo
+                string minutes = ((variablesGlobals.time % 3600) / 60).ToString("00");   //minutos
+                string seconds = (variablesGlobals.time % 60).ToString("00");            //segundos
                 text.text = minutes + ":" + seconds;                    //pinta en el reloj el tiempo que le queda
             }
 

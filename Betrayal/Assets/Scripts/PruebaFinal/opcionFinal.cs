@@ -6,13 +6,17 @@ public class opcionFinal : MonoBehaviour {
 
     public GameObject jane;
     public GameObject brooke;
+    public GameObject alex;
     public bool isClick;
 
+    public Light d1;
+    public Light d2;
+    public Light d3;
+    public Light d4;
 
     public void opcionAbandonar()
     {
         Debug.Log("OPCION ABANDONAR");
-        variablesGlobals.opcion = true;
 
         if (variablesGlobals.lang.Equals("español"))
         {
@@ -25,15 +29,14 @@ public class opcionFinal : MonoBehaviour {
 
         isClick = true;
 
-
+        
 
     }
 
     public void opcionPerdonar()
     {
         Debug.Log("OPCION PERDONAR");
-        variablesGlobals.opcion = true;
-
+        
         if(variablesGlobals.lang.Equals("español"))
         {
             jane.GetComponent<AudioJane>().ActivateAudio(5);
@@ -43,8 +46,14 @@ public class opcionFinal : MonoBehaviour {
             jane.GetComponent<AudioJane>().ActivateAudio(12);
         }
         isClick = true;
+        d1.color = Color.red;
+        d2.color = Color.red;
+        d3.color = Color.red;
+        d4.color = Color.red;
     }
 
+
+    
 
 
 }

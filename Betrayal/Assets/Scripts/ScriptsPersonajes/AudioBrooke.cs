@@ -189,32 +189,23 @@ public class AudioBrooke : MonoBehaviour
                 break;
             case 22:
                 jane.GetComponent<AudioJane>().DesactivarTele();
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio22;
-                    brooke.Play();
-                    numeroAudio = 43;
-                    personatge = 1;
-                    Invoke("PedirActivar", brooke.clip.length);
-                }
-                
+                brooke.clip = audio22;
+                brooke.Play();
+                numeroAudio = 43;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length);
                 break;
             case 23:
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio23;
-                    brooke.Play();
-                    numeroAudio = 44;
-                    personatge = 1;
-                    Invoke("PedirActivar", brooke.clip.length);
-                }
+                brooke.clip = audio23;
+                brooke.Play();
+                numeroAudio = 44;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length);
                 break;
             case 24:
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio24;
-                    brooke.Play();
-                }
+                brooke.clip = audio24;
+                brooke.Play();
+                variablesGlobals.prova6 = true;
                 break;
             case 25:
                 brooke.clip = audio25;
@@ -318,32 +309,24 @@ public class AudioBrooke : MonoBehaviour
                 break;
             case 75:
                 jane.GetComponent<AudioJane>().DesactivarTele();
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio75;
-                    brooke.Play();
-                    numeroAudio = 59;
-                    personatge = 1;
-                    Invoke("PedirActivar", brooke.clip.length);
-                }
-                
+                brooke.clip = audio75;
+                brooke.Play();
+                numeroAudio = 59;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length); 
                 break;
             case 76:
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio76;
-                    brooke.Play();
-                    numeroAudio = 60;
-                    personatge = 1;
-                    Invoke("PedirActivar", brooke.clip.length);
-                }
+                brooke.clip = audio76;
+                brooke.Play();
+                numeroAudio = 60;
+                personatge = 1;
+                Invoke("PedirActivar", brooke.clip.length);
+
                 break;
             case 77:
-                if (!variablesGlobals.opcion)
-                {
-                    brooke.clip = audio77;
-                    brooke.Play();
-                }
+                brooke.clip = audio77;
+                brooke.Play();
+                variablesGlobals.prova6 = true;
                 break;
             case 61:
                 brooke.clip = audio61;
