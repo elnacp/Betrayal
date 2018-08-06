@@ -14,7 +14,10 @@ public class AudioJane : MonoBehaviour
     public GameObject abandon;
     public GameObject abandonar;
 
-
+    public Light d1;
+    public Light d2;
+    public Light d3;
+    public Light d4;
 
     public AudioSource jane;
 
@@ -141,7 +144,14 @@ public class AudioJane : MonoBehaviour
                 jane.clip = audio6;
                 jane.Play();              
                 break;
-
+            case 7:
+                jane.clip = audio7;
+                jane.Play();
+                d1.color = Color.red;
+                d2.color = Color.red;
+                d3.color = Color.red;
+                d4.color = Color.red;
+                break;
        
 
 
@@ -190,6 +200,14 @@ public class AudioJane : MonoBehaviour
                 //SE ABREN LAS PUERTAS
                 jane.clip = audio13;
                 jane.Play();
+                break;
+            case 14:
+                jane.clip = audio14;
+                jane.Play();
+                d1.color = Color.red;
+                d2.color = Color.red;
+                d3.color = Color.red;
+                d4.color = Color.red;
                 break;
         }
     }

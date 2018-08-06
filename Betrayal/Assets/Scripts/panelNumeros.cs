@@ -117,26 +117,41 @@ public class panelNumeros : MonoBehaviour {
 
     void autentificarCodi()
     {
-        if( index == codigo.Length)
+        if (!variablesGlobals.finalPartida)
         {
-            bool correct = true;
-
-            for( int i = 0; i < codigo.Length; i++)
+            if (index == codigo.Length)
             {
-                if( cod[i] != codigo[i])
+
+                bool correct = true;
+
+                for (int i = 0; i < codigo.Length; i++)
                 {
-                    correct = false;
-                    break;
-                }
-            }
+                    if (cod[i] != codigo[i])
+                    {
 
-            if( correct == true)
-            {
-                texto.GetComponent<TextMesh>().text = textoAcertado;
-                texto.fontSize = 16;
-                audioPanel.GetComponent<PanelAudio>().CorrectCode();
-                codiInsertat = true;
-                pruebaFinalizada();
+                        correct = false;
+                        break;
+                    }
+                }
+
+                if (correct == true)
+                {
+                    texto.GetComponent<TextMesh>().text = textoAcertado;
+                    texto.fontSize = 16;
+                    audioPanel.GetComponent<PanelAudio>().CorrectCode();
+                    codiInsertat = true;
+                    pruebaFinalizada();
+
+
+                }
+                else
+                {
+                    texto.GetComponent<TextMesh>().text = textoError;
+                    texto.fontSize = 16;
+                    borrar();
+                    audioPanel.GetComponent<PanelAudio>().IncorrectCode();
+                }
+
 
 
             }
@@ -146,19 +161,12 @@ public class panelNumeros : MonoBehaviour {
                 texto.fontSize = 16;
                 borrar();
                 audioPanel.GetComponent<PanelAudio>().IncorrectCode();
+                codiIncorrecte = true;
+                darPista();
             }
-
-
-
-        }else
-        {
-            texto.GetComponent<TextMesh>().text = textoError;
-            texto.fontSize = 16;
-            borrar();
-            audioPanel.GetComponent<PanelAudio>().IncorrectCode();
-            codiIncorrecte = true;
-            darPista();
         }
+        
+        
 
     }
 
@@ -170,9 +178,13 @@ public class panelNumeros : MonoBehaviour {
 
     void eliminarCodi()
     {
-        borrar();
-        texto.GetComponent<TextMesh>().text = textoEspera;
-        texto.fontSize = 16;
+        if (!variablesGlobals.finalPartida)
+        {
+            borrar();
+            texto.GetComponent<TextMesh>().text = textoEspera;
+            texto.fontSize = 16;
+        }
+        
     }
 
     public void aumentarCod( int num)

@@ -16,7 +16,7 @@ public class variablesGlobals : MonoBehaviour {
     static public bool prova5 = false;
     static public bool opcion = false;
     static public float time = 0;
-    static public bool playing = false;
+    static public bool playing = true;
     static public bool finalPartida = false;
 
     static public bool entroEscena = false;

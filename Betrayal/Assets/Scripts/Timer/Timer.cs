@@ -9,10 +9,11 @@ public class Timer : MonoBehaviour {
     float theTime;
     public float speed;
     private float time;
+    public GameObject jane;
 
     void Start()
     {
-        time = variablesGlobals.time + 840;
+        time = variablesGlobals.time + 10;
         text = GetComponent<Text>();
     }
     void Update()
@@ -31,6 +32,24 @@ public class Timer : MonoBehaviour {
             {
                 text.text = "FINAAL";
                 variablesGlobals.finalPartida = true;
+                //todas las variables las ponemos a FALSE
+                variablesGlobals.prova3 = false;
+                variablesGlobals.prova41 = false;
+                variablesGlobals.prova42 = false;
+                variablesGlobals.prova43 = false;
+                variablesGlobals.prova5 = false;
+                variablesGlobals.playing = false;
+
+                if (variablesGlobals.lang.Equals("español"))
+                {
+                    jane.GetComponent<AudioJane>().ActivateAudio(7);
+                }
+                if (variablesGlobals.lang.Equals("english"))
+                {
+                    jane.GetComponent<AudioJane>().ActivateAudio(14);
+                }
+
+
             }
         }
         
