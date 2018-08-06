@@ -7,7 +7,13 @@ public class AudioAlex : MonoBehaviour {
     public GameObject mensaje;
     public GameObject brooke;
     public GameObject jane;
-    
+
+    public Light d1;
+    public Light d2;
+    public Light d3;
+    public Light d4;
+
+
     
 
     AudioSource alex;
@@ -55,22 +61,23 @@ public class AudioAlex : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         lang = variablesGlobals.lang;
-        
-        
+       
+        //INTENSIDAD DE LA LUZ DEL CUARTO
+        d1.intensity = 0.18f;
+        d2.intensity = 0.18f;
+        d3.intensity = 0.18f;
+        d4.intensity = 0.18f;
+
         if (lang.Equals("español"))
         {
             español = true;
             Wait(5);
             alex = GetComponent<AudioSource>();
-            /*alex.clip = audio33;
+            alex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
-            Invoke("PedirActivar", alex.clip.length);*/
-            
-          
-            
-
+            Invoke("PedirActivar", alex.clip.length);
         }
 
         if (lang.Equals("english"))
@@ -78,11 +85,11 @@ public class AudioAlex : MonoBehaviour {
             english = true;
             Wait(30);
             alex = GetComponent<AudioSource>();
-            /*alex.clip = audio47;
+            alex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
-            Invoke("PedirActivar", alex.clip.length);*/
+            Invoke("PedirActivar", alex.clip.length);
         }
 
     }
@@ -135,6 +142,11 @@ public class AudioAlex : MonoBehaviour {
                 numeroAudio = 1;
                 personatge = 3;
                 Invoke("PedirActivar", alex.clip.length);
+                d1.intensity = 0.42f;
+                d2.intensity = 0.42f;
+                d3.intensity = 0.42f;
+                d4.intensity = 0.42f;
+
                 break;
             case 39:
                 alex.clip = audio39;

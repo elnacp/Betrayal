@@ -20,15 +20,19 @@ public class traspasoObjetos : MonoBehaviour {
         switch (other.name)
         {
             case "Llave":
-                if (variablesGlobals.lang.Equals("español"))
+                if( variablesGlobals.prova1 == true)
                 {
-                    brooke.GetComponent<AudioBrooke>().ActivateAudio(18);
+                    if (variablesGlobals.lang.Equals("español"))
+                    {
+                        brooke.GetComponent<AudioBrooke>().ActivateAudio(18);
+                    }
+                    if (variablesGlobals.lang.Equals("english"))
+                    {
+                        brooke.GetComponent<AudioBrooke>().ActivateAudio(65);
+                    }
+                    variablesGlobals.prova1 = true;
                 }
-                if (variablesGlobals.lang.Equals("english"))
-                {
-                    brooke.GetComponent<AudioBrooke>().ActivateAudio(65);
-                }
-                variablesGlobals.prova1 = true;
+                
                 break;
             case "ConoRojo":
                 if (variablesGlobals.prova41)

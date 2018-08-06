@@ -107,7 +107,9 @@ public class AudioJane : MonoBehaviour
             case 2:
                 jane.clip = audio2;
                 jane.Play();
-                Invoke("PedirDesactivar", jane.clip.length + 2);
+                variablesGlobals.playing = true;
+                variablesGlobals.prova3 = true;
+                Invoke("PedirDesactivar", jane.clip.length + 2);               
                 break;
             case 3:
                 jane.clip = audio3;
@@ -155,6 +157,8 @@ public class AudioJane : MonoBehaviour
             case 9:
                 jane.clip = audio9;
                 jane.Play();
+                variablesGlobals.playing = true;
+                variablesGlobals.prova3 = true;
                 Invoke("PedirDesactivar", jane.clip.length +2);
                 break;
             case 10:

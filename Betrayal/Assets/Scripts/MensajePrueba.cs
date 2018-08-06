@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MensajePrueba : MonoBehaviour {
     public Text prueba;
     public Text mision;
-
+    public GameObject pop;
+    
     void Start()
     {
         //Text sets your text to say this message
@@ -30,7 +31,6 @@ public class MensajePrueba : MonoBehaviour {
                 switch (test)
                 {
                     case 1:
-                        
                         prueba.text = "1ra Prueba: Libera a Brooke";
                         mision.text = "Encuentra la llave";
                         break;
@@ -105,6 +105,11 @@ public class MensajePrueba : MonoBehaviour {
                 }
                 break;
         }
+
+        pop.GetComponent<AudioPop>().PopAudio();
+
+
+
     }
 
     IEnumerator Wait(int time)

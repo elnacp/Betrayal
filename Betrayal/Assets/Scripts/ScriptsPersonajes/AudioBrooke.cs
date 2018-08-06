@@ -122,6 +122,7 @@ public class AudioBrooke : MonoBehaviour
             case 17:
                 brooke.clip = audio17;
                 brooke.Play();
+                variablesGlobals.prova1 = true;
                 mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
                 mensajeTubo.GetComponent<MensajesTubo>().MostrarMensaje();
                 break;
@@ -130,6 +131,8 @@ public class AudioBrooke : MonoBehaviour
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
                 mensajeTubo.GetComponent<MensajesTubo>().QuitarMensaje();
+                variablesGlobals.prova1 = false;
+                variablesGlobals.prova2 = true;
                 break;
             case 19:
                 brooke.clip = audio19;
@@ -247,6 +250,7 @@ public class AudioBrooke : MonoBehaviour
             case 64:
                 brooke.clip = audio64;
                 brooke.Play();
+                variablesGlobals.prova1 = true;
                 mensaje.GetComponent<MensajePrueba>().TitleTest(1, lang);
                 mensajeTubo.GetComponent<MensajesTubo>().MostrarMensaje();
                 break;
@@ -255,6 +259,8 @@ public class AudioBrooke : MonoBehaviour
                 brooke.Play();
                 mensaje.GetComponent<MensajePrueba>().TitleTest(2, lang);
                 mensajeTubo.GetComponent<MensajesTubo>().QuitarMensaje();
+                variablesGlobals.prova1 = false;
+                variablesGlobals.prova2 = true;
                 break;
             case 66:
                 brooke.clip = audio66;

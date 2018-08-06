@@ -12,32 +12,36 @@ public class LlaveAudio : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if( other.tag == "hand")
+        if (variablesGlobals.prova1)
         {
-            if (!isEnter)
+            if (other.tag == "hand")
             {
-                if(variablesGlobals.lang.Equals("español"))
+                if (!isEnter)
                 {
-                    alex.GetComponent<AudioAlex>().ActivateAudio(36);
-                    mensaje.GetComponent<MensajePrueba>().BuidarText();
-                    isEnter = true;
-                }
-                if (variablesGlobals.lang.Equals("english"))
-                {
-                    alex.GetComponent<AudioAlex>().ActivateAudio(50);
-                    mensaje.GetComponent<MensajePrueba>().BuidarText();
-                    isEnter = true;
-                }
+                    if (variablesGlobals.lang.Equals("español"))
+                    {
+                        alex.GetComponent<AudioAlex>().ActivateAudio(36);
+                        mensaje.GetComponent<MensajePrueba>().BuidarText();
+                        isEnter = true;
+                    }
+                    if (variablesGlobals.lang.Equals("english"))
+                    {
+                        alex.GetComponent<AudioAlex>().ActivateAudio(50);
+                        mensaje.GetComponent<MensajePrueba>().BuidarText();
+                        isEnter = true;
+                    }
 
+                }
+            }
+
+            if (other.name == "TuboComunicació")
+            {
+
+
+                destruir = true;
             }
         }
-
-        if( other.name == "TuboComunicació")
-        {
-
-            
-            destruir = true;
-        }
+        
 
     }
 

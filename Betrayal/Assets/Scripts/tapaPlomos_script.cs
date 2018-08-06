@@ -27,96 +27,102 @@ public class tapaPlomos_script : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-
-        if (col.name == "LeftHandAnchor")
+        if(variablesGlobals.prova2)
         {
-            //ABRE LA TAPA DE LA CAJA DE PLOMOS
-            if (OVRInput.Get(OVRInput.Button.Three))
+            if (col.name == "LeftHandAnchor")
             {
-                //Si no se ha entrado en esta opcion se activa la animacion
-                if (!isOpen)
+                //ABRE LA TAPA DE LA CAJA DE PLOMOS
+                if (OVRInput.Get(OVRInput.Button.Three))
                 {
-                    Debug.Log("OPEEEEEN");
-                    anim.SetBool("open", true);
-                    isOpen = true;
+                    //Si no se ha entrado en esta opcion se activa la animacion
+                    if (!isOpen)
+                    {
+                        Debug.Log("OPEEEEEN");
+                        anim.SetBool("open", true);
+                        isOpen = true;
+                    }
+
                 }
 
+                //CIERRA LA TAPA DE LA CAJA DE PLOMOS
+                if (OVRInput.Get(OVRInput.Button.Four))
+                {
+                    //Si no se ha entrado en esta opcion se activa la animacion
+                    if (isOpen)
+                    {
+                        anim.SetBool("open", false);
+                        isOpen = false;
+                    }
+
+                }
             }
 
-            //CIERRA LA TAPA DE LA CAJA DE PLOMOS
-            if (OVRInput.Get(OVRInput.Button.Four))
+            if (col.name == "RightHandAnchor")
             {
-                //Si no se ha entrado en esta opcion se activa la animacion
-                if (isOpen)
+                //ABRE LA TAPA DE LA CAJA DE PLOMOS
+                if (OVRInput.Get(OVRInput.Button.One))
                 {
-                    anim.SetBool("open", false);
-                    isOpen = false;
+                    //Si no se ha entrado en esta opcion se activa la animacion
+                    if (!isOpen)
+                    {
+
+                        anim.SetBool("open", true);
+                        isOpen = true;
+                    }
+
                 }
 
+                //CIERRA LA TAPA DE LA CAJA DE PLOMOS
+                if (OVRInput.Get(OVRInput.Button.Two))
+                {
+                    //Si no se ha entrado en esta opcion se activa la animacion
+                    if (isOpen)
+                    {
+                        anim.SetBool("open", false);
+                        isOpen = false;
+                    }
+
+                }
             }
         }
-
-        if (col.name == "RightHandAnchor")
-        {
-            //ABRE LA TAPA DE LA CAJA DE PLOMOS
-            if (OVRInput.Get(OVRInput.Button.One))
-            {
-                //Si no se ha entrado en esta opcion se activa la animacion
-                if (!isOpen)
-                {
-
-                    anim.SetBool("open", true);
-                    isOpen = true;
-                }
-
-            }
-
-            //CIERRA LA TAPA DE LA CAJA DE PLOMOS
-            if (OVRInput.Get(OVRInput.Button.Two))
-            {
-                //Si no se ha entrado en esta opcion se activa la animacion
-                if (isOpen)
-                {
-                    anim.SetBool("open", false);
-                    isOpen = false;
-                }
-
-            }
-        }
+        
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-
-        if (other.name == "RightHandAnchor")
+        if (variablesGlobals.prova2)
         {
-            if (isOpen)
+            if (other.name == "RightHandAnchor")
             {
-                cerrarB.SetActive(true);
-                StartCoroutine("WaitForSec");
-            }
-            else
-            {
-                abrirA.SetActive(true);
-                StartCoroutine("WaitForSec");
+                if (isOpen)
+                {
+                    cerrarB.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+                else
+                {
+                    abrirA.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+
             }
 
+            if (other.name == "LeftHandAnchor")
+            {
+                if (isOpen)
+                {
+                    cerrarY.SetActive(true);
+                    StartCoroutine("WaitForSec");
+                }
+                else
+                {
+                    abrirX.SetActive(true);
+
+                }
+            }
         }
-
-        if (other.name == "LeftHandAnchor")
-        {
-            if (isOpen)
-            {
-                cerrarY.SetActive(true);
-                StartCoroutine("WaitForSec");
-            }
-            else
-            {
-                abrirX.SetActive(true);
-
-            }
-        }
+        
     }
     IEnumerator WaitForSec()
     {
