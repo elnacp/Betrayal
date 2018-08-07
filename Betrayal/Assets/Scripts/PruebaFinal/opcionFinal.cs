@@ -8,6 +8,7 @@ public class opcionFinal : MonoBehaviour {
     public GameObject brooke;
     public GameObject alex;
     public bool isClick;
+    public GameObject puerta;
 
     public Light d1;
     public Light d2;
@@ -30,6 +31,7 @@ public class opcionFinal : MonoBehaviour {
         isClick = true;
         variablesGlobals.playing = false;
 
+        puerta.GetComponent<puertaScript>().isOpen = true;
         
 
     }
