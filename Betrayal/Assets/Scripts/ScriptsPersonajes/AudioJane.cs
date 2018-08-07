@@ -125,6 +125,7 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 variablesGlobals.playing = true;
                 variablesGlobals.prova3 = true;
+                rellotge.GetComponent<AudioReloj>().DesactivarReloj();
                 Invoke("PedirDesactivar", jane.clip.length + 2);               
                 break;
             case 3:
@@ -188,6 +189,7 @@ public class AudioJane : MonoBehaviour
                 jane.Play();
                 variablesGlobals.playing = true;
                 variablesGlobals.prova3 = true;
+                activarRellotge();
                 Invoke("PedirDesactivar", jane.clip.length +2);
                 break;
             case 10:
@@ -246,6 +248,12 @@ public class AudioJane : MonoBehaviour
     public void Buidar()
     {
         jane.clip = null;
+    }
+
+
+    private void activarRellotge()
+    {
+        rellotge.GetComponent<AudioReloj>().ActivarReloj();
     }
 
 

@@ -6,6 +6,7 @@ public class puertaScript : MonoBehaviour {
 
     private Animator anim;
     public bool isOpen;
+    public GameObject puerta;
   
 
 	// Use this for initialization
@@ -19,6 +20,7 @@ public class puertaScript : MonoBehaviour {
 		if(isOpen)
         {
             anim.SetBool("open", true);
+            puerta.GetComponent<PuertaAudio>().doorSound();
             isOpen = false;
         }
 	}

@@ -73,11 +73,11 @@ public class AudioAlex : MonoBehaviour {
             español = true;
             Wait(5);
             alex = GetComponent<AudioSource>();
-            /*alex.clip = audio33;
+            alex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
-            Invoke("PedirActivar", alex.clip.length);*/
+            Invoke("PedirActivar", alex.clip.length);
         }
 
         if (lang.Equals("english"))
@@ -85,11 +85,11 @@ public class AudioAlex : MonoBehaviour {
             english = true;
             Wait(30);
             alex = GetComponent<AudioSource>();
-            /*alex.clip = audio47;
+            alex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
-            Invoke("PedirActivar", alex.clip.length);*/
+            Invoke("PedirActivar", alex.clip.length);
         }
 
     }
