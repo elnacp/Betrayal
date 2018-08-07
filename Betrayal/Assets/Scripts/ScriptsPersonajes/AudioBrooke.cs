@@ -10,12 +10,14 @@ public class AudioBrooke : MonoBehaviour
     public GameObject jane;
     public GameObject panel;
     public GameObject instrucciones;
+    public GameObject audioReloj;
 
     public GameObject mesaPuzle;
     public GameObject colosionadores;
     public GameObject pieza1;
     public GameObject pieza2;
     public GameObject puzleNointeractivo;
+    
 
     AudioSource brooke;
 
@@ -205,7 +207,7 @@ public class AudioBrooke : MonoBehaviour
             case 24:
                 brooke.clip = audio24;
                 brooke.Play();
-                variablesGlobals.prova6 = true;
+                Invoke("activarFinal", brooke.clip.length);
                 break;
             case 25:
                 brooke.clip = audio25;
@@ -326,7 +328,8 @@ public class AudioBrooke : MonoBehaviour
             case 77:
                 brooke.clip = audio77;
                 brooke.Play();
-                variablesGlobals.prova6 = true;
+                Invoke("activarFinal", brooke.clip.length);
+                
                 break;
             case 61:
                 brooke.clip = audio61;
@@ -346,8 +349,14 @@ public class AudioBrooke : MonoBehaviour
         
     }
 
-
-
+    private void activarFinal()
+    {
+        variablesGlobals.prova6 = true;
+        variablesGlobals.time = 60;
+        variablesGlobals.playing = true;
+        audioReloj.GetComponent<AudioReloj>().ActivarReloj();
+    }
+        
     private void apareixPuzle()
     {
         mesaPuzle.SetActive(true);

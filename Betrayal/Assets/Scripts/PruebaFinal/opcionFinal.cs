@@ -28,6 +28,7 @@ public class opcionFinal : MonoBehaviour {
         }
 
         isClick = true;
+        variablesGlobals.playing = false;
 
         
 
@@ -50,6 +51,7 @@ public class opcionFinal : MonoBehaviour {
         d2.color = Color.red;
         d3.color = Color.red;
         d4.color = Color.red;
+        variablesGlobals.playing = false;
     }
 
 

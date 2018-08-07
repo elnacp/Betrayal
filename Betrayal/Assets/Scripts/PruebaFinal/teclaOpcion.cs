@@ -23,7 +23,10 @@ public class teclaOpcion : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        tecla.GetComponent<SpriteRenderer>().sprite = onClick;
+        if (variablesGlobals.prova6)
+        {
+            tecla.GetComponent<SpriteRenderer>().sprite = onClick;
+        }
     }
 
     private void OnTriggerStay(Collider other)

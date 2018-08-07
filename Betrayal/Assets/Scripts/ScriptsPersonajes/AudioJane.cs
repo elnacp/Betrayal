@@ -13,6 +13,8 @@ public class AudioJane : MonoBehaviour
     public GameObject perdonar;
     public GameObject abandon;
     public GameObject abandonar;
+    public GameObject rellotge;
+    public GameObject spotlight;
 
     public Light d1;
     public Light d2;
@@ -143,8 +145,8 @@ public class AudioJane : MonoBehaviour
                 panellFinal.SetActive(true);
                 perdonar.SetActive(true);
                 abandonar.SetActive(true);
-                variablesGlobals.time = 60;
-                variablesGlobals.playing = true;
+                spotlight.SetActive(true);
+                bajarLuz();    
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 5:
@@ -163,6 +165,7 @@ public class AudioJane : MonoBehaviour
                 ActivarTele();
                 jane.clip = audio7;
                 jane.Play();
+                desactivarRellotge();
                 d1.color = Color.red;
                 d2.color = Color.red;
                 d3.color = Color.red;
@@ -202,10 +205,10 @@ public class AudioJane : MonoBehaviour
                 panellFinal.SetActive(true);
                 forgive.SetActive(true);
                 abandon.SetActive(true);
+                spotlight.SetActive(true);
+                bajarLuz();    
                 numeroAudio = 75;
                 personatge = 2;
-                variablesGlobals.time = 60;
-                variablesGlobals.playing = true;
                 Invoke("PedirActivar", jane.clip.length);
                 break;
             case 12:
@@ -224,6 +227,7 @@ public class AudioJane : MonoBehaviour
                 ActivarTele();
                 jane.clip = audio14;
                 jane.Play();
+                desactivarRellotge();
                 d1.color = Color.red;
                 d2.color = Color.red;
                 d3.color = Color.red;
@@ -243,5 +247,20 @@ public class AudioJane : MonoBehaviour
     {
         jane.clip = null;
     }
+
+
+    private void desactivarRellotge()
+    {
+        rellotge.GetComponent<AudioReloj>().DesactivarReloj();
+    }
+
+    private void bajarLuz()
+    {
+        d1.intensity = 0.18f;
+        d2.intensity = 0.18f;
+        d3.intensity = 0.18f;
+        d4.intensity = 0.18f;
+    }
+
 
 }
