@@ -7,7 +7,7 @@ public class opcionFinal : MonoBehaviour {
     public GameObject jane;
     public GameObject brooke;
     public GameObject alex;
-    public bool isClick;
+    public bool isClick = false;
     public GameObject puerta;
 
     public Light d1;

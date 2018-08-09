@@ -25,7 +25,10 @@ public class teclaOpcion : MonoBehaviour {
     {
         if (variablesGlobals.prova6)
         {
-            tecla.GetComponent<SpriteRenderer>().sprite = onClick;
+            if (!opcionFinal.GetComponent<opcionFinal>().isClick)
+            {
+                tecla.GetComponent<SpriteRenderer>().sprite = onClick;
+            }
         }
     }
 
@@ -78,7 +81,7 @@ public class teclaOpcion : MonoBehaviour {
                         {
                             tecla.GetComponent<SpriteRenderer>().sprite = normal;
                         }
-                        if (!cliqui)
+                        if (cliqui)
                         {
                             tecla.GetComponent<SpriteRenderer>().sprite = click;
                         }
