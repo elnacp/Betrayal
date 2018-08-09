@@ -85,7 +85,7 @@ public class AudioJane : MonoBehaviour
         {
             numeroAudio = 66;
         }
-        Debug.Log(numeroAudio);
+
         personatge = 2;
         mensaje.GetComponent<MensajePrueba>().TitleTest(3, lang);
         Invoke("PedirActivar", 3);

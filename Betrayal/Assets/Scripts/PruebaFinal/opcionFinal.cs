@@ -17,7 +17,7 @@ public class opcionFinal : MonoBehaviour {
 
     public void opcionAbandonar()
     {
-        Debug.Log("OPCION ABANDONAR");
+        
 
         if (variablesGlobals.lang.Equals("español"))
         {
@@ -38,7 +38,7 @@ public class opcionFinal : MonoBehaviour {
 
     public void opcionPerdonar()
     {
-        Debug.Log("OPCION PERDONAR");
+        
         
         if(variablesGlobals.lang.Equals("español"))
         {
