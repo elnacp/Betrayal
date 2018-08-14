@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AcomuladorPiezas : MonoBehaviour {
 
-    private int acomulador = 44;  // el acomulador de piezas del puzle
+    private int acomulador = 13;  // el acomulador de piezas del puzle
     public GameObject alex;      // audio de alex
     public GameObject pieza10;   // pieza del puzle que falta
     public GameObject cuadro;
@@ -13,10 +13,10 @@ public class AcomuladorPiezas : MonoBehaviour {
 
     public void aumentarAcomulador()
     {
-
+        
         acomulador = acomulador + 1;
-        Debug.Log(acomulador);
-        if (acomulador == 46)
+        
+        if (acomulador == 23)
         {
             if (variablesGlobals.lang.Equals("español"))
             {
@@ -29,7 +29,7 @@ public class AcomuladorPiezas : MonoBehaviour {
             pieza10.SetActive(true);
         }
 
-        if(acomulador == 48)
+        if(acomulador == 24)
         {
             if (variablesGlobals.lang.Equals("español"))
             {
@@ -40,10 +40,11 @@ public class AcomuladorPiezas : MonoBehaviour {
                 alex.GetComponent<AudioAlex>().ActivateAudio(58);
             }
             cuadro.SetActive(true);
+            Destroy(pieza10);
 
         }
 
-
+        
 
     }
 

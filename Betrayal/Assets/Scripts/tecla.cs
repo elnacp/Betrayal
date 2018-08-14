@@ -14,8 +14,6 @@ public class tecla : MonoBehaviour {
 
     
 
-
-
     private void OnTriggerStay(Collider other)
     {
         if (!variablesGlobals.finalPartida)
