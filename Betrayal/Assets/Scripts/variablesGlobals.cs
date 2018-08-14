@@ -9,7 +9,7 @@ public class variablesGlobals : MonoBehaviour {
     static public bool spanish = true;
     static public bool prova1 = false;
     static public bool prova2 = false;
-    static public bool prova3 = true;
+    static public bool prova3 = false;
     static public bool prova41 = false;
     static public bool prova42 = false;
     static public bool prova43 = false;
