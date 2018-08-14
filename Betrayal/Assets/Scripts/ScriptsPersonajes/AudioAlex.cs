@@ -230,6 +230,10 @@ public class AudioAlex : MonoBehaviour {
                 numeroAudio = 8;
                 personatge = 3;
                 Invoke("PedirActivar", alex.clip.length);
+                d1.intensity = 0.42f;
+                d2.intensity = 0.42f;
+                d3.intensity = 0.42f;
+                d4.intensity = 0.42f;
                 break;
             case 53:
                 alex.clip = audio53;

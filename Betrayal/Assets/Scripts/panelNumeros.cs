@@ -150,6 +150,7 @@ public class panelNumeros : MonoBehaviour {
                     texto.fontSize = 16;
                     borrar();
                     audioPanel.GetComponent<PanelAudio>().IncorrectCode();
+                    darPista();
                 }
 
 

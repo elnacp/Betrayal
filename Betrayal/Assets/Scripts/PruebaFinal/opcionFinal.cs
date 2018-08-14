@@ -9,6 +9,7 @@ public class opcionFinal : MonoBehaviour {
     public GameObject alex;
     public bool isClick = false;
     public GameObject puerta;
+    public GameObject audio;
 
     public Light d1;
     public Light d2;
@@ -30,6 +31,7 @@ public class opcionFinal : MonoBehaviour {
 
         isClick = true;
         variablesGlobals.playing = false;
+        audio.GetComponent<AudioReloj>().DesactivarReloj();
 
         puerta.GetComponent<puertaScript>().isOpen = true;
         
@@ -54,6 +56,7 @@ public class opcionFinal : MonoBehaviour {
         d3.color = Color.red;
         d4.color = Color.red;
         variablesGlobals.playing = false;
+        audio.GetComponent<AudioReloj>().DesactivarReloj();
     }
 
 
