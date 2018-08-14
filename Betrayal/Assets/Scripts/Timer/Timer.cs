@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour {
     public GameObject jane;
     public GameObject alex;
     public GameObject brooke;
+    public GameObject Audiorellotge;
 
 
     void Start()
@@ -33,7 +34,7 @@ public class Timer : MonoBehaviour {
 
             if (variablesGlobals.time < 0)                                               //En el caso de que sea inferior a 0 FINAL DE PARTIDA
             {
-                text.text = "FINAAL";
+                text.text = "FINAL";
                 variablesGlobals.finalPartida = true;
                 //todas las variables las ponemos a FALSE
                 variablesGlobals.prova3 = false;
@@ -53,8 +54,13 @@ public class Timer : MonoBehaviour {
                 }
                 alex.GetComponent<AudioAlex>().Buidar();
                 brooke.GetComponent<AudioBrooke>().Buidar();
+                Audiorellotge.GetComponent<AudioReloj>().DesactivarReloj();
 
             }
+        }
+        if (!variablesGlobals.playing)
+        {
+            Audiorellotge.GetComponent<AudioReloj>().DesactivarReloj();
         }
         
 
