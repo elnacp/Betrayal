@@ -40,8 +40,6 @@ public class opcionFinal : MonoBehaviour {
 
     public void opcionPerdonar()
     {
-        
-        
         if(variablesGlobals.lang.Equals("español"))
         {
             jane.GetComponent<AudioJane>().ActivateAudio(5);

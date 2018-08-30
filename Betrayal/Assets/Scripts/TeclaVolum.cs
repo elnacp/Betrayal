@@ -5,7 +5,8 @@ using UnityEngine;
 public class TeclaVolum : MonoBehaviour {
 
     public GameObject tecla; // tecla
-    public bool isInside = false; //
+    public bool isInside = false;
+    
 
     private void OnTriggerStay(Collider other)
     {
