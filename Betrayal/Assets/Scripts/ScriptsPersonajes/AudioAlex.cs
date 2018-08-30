@@ -68,28 +68,27 @@ public class AudioAlex : MonoBehaviour {
         d3.intensity = 0.18f;
         d4.intensity = 0.18f;
 
+        alex = GetComponent<AudioSource>();
         if (lang.Equals("español"))
         {
             español = true;
             Wait(5);
-            alex = GetComponent<AudioSource>();
-            alex.clip = audio33;
+            /*alex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
-            Invoke("PedirActivar", alex.clip.length);
+            Invoke("PedirActivar", alex.clip.length);*/
         }
 
         if (lang.Equals("english"))
         {
             english = true;
-            Wait(30);
-            alex = GetComponent<AudioSource>();
-            alex.clip = audio47;
+            Wait(5);
+            /*alex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
-            Invoke("PedirActivar", alex.clip.length);
+            Invoke("PedirActivar", alex.clip.length);*/
         }
 
     }

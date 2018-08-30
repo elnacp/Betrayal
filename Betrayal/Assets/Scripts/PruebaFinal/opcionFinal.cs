@@ -10,6 +10,8 @@ public class opcionFinal : MonoBehaviour {
     public bool isClick = false;
     public GameObject puerta;
     public GameObject audio;
+    public GameObject colisionador;
+    public GameObject salida; 
 
     public Light d1;
     public Light d2;
@@ -18,7 +20,6 @@ public class opcionFinal : MonoBehaviour {
 
     public void opcionAbandonar()
     {
-        
 
         if (variablesGlobals.lang.Equals("español"))
         {
@@ -34,6 +35,9 @@ public class opcionFinal : MonoBehaviour {
         audio.GetComponent<AudioReloj>().DesactivarReloj();
 
         puerta.GetComponent<puertaScript>().isOpen = true;
+        Debug.Log("ABANDONAR");
+        colisionador.SetActive(true);
+        salida.SetActive(true);
         
 
     }
@@ -55,6 +59,7 @@ public class opcionFinal : MonoBehaviour {
         d4.color = Color.red;
         variablesGlobals.playing = false;
         audio.GetComponent<AudioReloj>().DesactivarReloj();
+        Debug.Log("PERDONAR");
     }
 
 
