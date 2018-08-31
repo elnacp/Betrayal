@@ -35,7 +35,6 @@ public class opcionFinal : MonoBehaviour {
         audio.GetComponent<AudioReloj>().DesactivarReloj();
 
         puerta.GetComponent<puertaScript>().isOpen = true;
-        Debug.Log("ABANDONAR");
         colisionador.SetActive(true);
         salida.SetActive(true);
         
@@ -59,7 +58,7 @@ public class opcionFinal : MonoBehaviour {
         d4.color = Color.red;
         variablesGlobals.playing = false;
         audio.GetComponent<AudioReloj>().DesactivarReloj();
-        Debug.Log("PERDONAR");
+        
     }
 
 

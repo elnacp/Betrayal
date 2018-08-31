@@ -73,22 +73,22 @@ public class AudioAlex : MonoBehaviour {
         {
             español = true;
             Wait(5);
-            /*alex.clip = audio33;
+            alex.clip = audio33;
             alex.Play();
             personatge = 2;
             numeroAudio = 15;
-            Invoke("PedirActivar", alex.clip.length);*/
+            Invoke("PedirActivar", alex.clip.length);
         }
 
         if (lang.Equals("english"))
         {
             english = true;
             Wait(5);
-            /*alex.clip = audio47;
+            alex.clip = audio47;
             alex.Play();
             personatge = 2;
             numeroAudio = 62;
-            Invoke("PedirActivar", alex.clip.length);*/
+            Invoke("PedirActivar", alex.clip.length);
         }
 
     }

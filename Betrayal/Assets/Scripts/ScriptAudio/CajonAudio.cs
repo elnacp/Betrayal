@@ -19,14 +19,14 @@ public class CajonAudio : MonoBehaviour {
 
     public void AbrirCajon()
     {
-        Debug.Log("Abrir");
+       
         cajon.clip = abrir;
         cajon.Play();
     }
 
     public void CerrarCajon()
     {
-        Debug.Log("Cerrar");
+        
         cajon.clip = cerrar;
         cajon.Play();
     }

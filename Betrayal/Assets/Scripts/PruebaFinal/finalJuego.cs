@@ -9,7 +9,6 @@ public class finalJuego : MonoBehaviour {
     {
         if(other.tag == "hand")
         {
-            Debug.Log("Salgo");
             //FINAL DEL JUEGO SE VA A LA PANTALLA DE MENÚ
             SceneManager.LoadScene(0);
         }

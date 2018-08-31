@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioBrooke : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class AudioBrooke : MonoBehaviour
     public GameObject pieza1;
     public GameObject pieza2;
     public GameObject puzleNointeractivo;
+
     
 
     AudioSource brooke;
@@ -213,6 +215,7 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio25;
                 brooke.Play();
                 //SE APAGAN LAS LUCES DE LA HABITACION
+                Invoke("FinalPartida", brooke.clip.length);
                 break;
             case 32:
                 brooke.clip = audio32;
@@ -335,6 +338,7 @@ public class AudioBrooke : MonoBehaviour
                 brooke.clip = audio61;
                 brooke.Play();
                 //SE APAGAN LAS LUCES DE LA HABITACION
+                Invoke("FinalPartida", brooke.clip.length);
                 break;
             case 78:
                 brooke.clip = audio78;
@@ -377,5 +381,8 @@ public class AudioBrooke : MonoBehaviour
         brooke.clip = null;
     }
 
-
+    private void FinalPartida()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

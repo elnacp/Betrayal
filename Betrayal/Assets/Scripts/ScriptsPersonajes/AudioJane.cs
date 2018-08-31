@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioJane : MonoBehaviour
 {
@@ -97,6 +98,8 @@ public class AudioJane : MonoBehaviour
     {
         pantallaTele.GetComponent<TelevisorAudio>().DesactivarTelevisor();
         pantallaTele.SetActive(false);
+        
+
     }
 
     public void ActivarTele()
@@ -172,6 +175,7 @@ public class AudioJane : MonoBehaviour
                 d3.color = Color.red;
                 d4.color = Color.red;
                 Invoke("DesactivarTele", jane.clip.length);
+                fin();
                 break;
        
 
@@ -235,6 +239,7 @@ public class AudioJane : MonoBehaviour
                 d3.color = Color.red;
                 d4.color = Color.red;
                 Invoke("DesactivarTele", jane.clip.length);
+                fin();
                 break;
         }
     }
@@ -270,5 +275,13 @@ public class AudioJane : MonoBehaviour
         d4.intensity = 0.18f;
     }
 
+    private void FinalPartida()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void fin(){
+        Invoke("FinalPartida", 2);
+    }
 
 }

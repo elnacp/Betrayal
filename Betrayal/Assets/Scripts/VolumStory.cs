@@ -4,40 +4,31 @@ using UnityEngine;
 
 public class VolumStory : MonoBehaviour {
 
-    public GameObject On;
-    public GameObject Off;
+    
     public AudioSource volum;
+    public AudioClip español;
+    public AudioClip english;
 
 
    
 
     private void Start()
     {
-        
-        On.SetActive(true);
-        Off.SetActive(false);
+        if (variablesGlobals.lang.Equals("español"))
+        {
+            volum.clip = español;
+        }
+        if (variablesGlobals.lang.Equals("english"))
+        {
+            volum.clip = english;
+        }
+        volum.Play();
+       
         
     }
 
 
-    public void ChangeMute(GameObject obj)
-    {
-
-        if( obj.name == "ON")
-        {
-            volum.mute = false;
-            On.SetActive(false);
-            Off.SetActive(true);
-        }
-        if( obj.name == "OFF")
-        {
-
-            volum.mute = true;
-            On.SetActive(true);
-            Off.SetActive(false);
-        }
-
-    }
+    
 
     
 

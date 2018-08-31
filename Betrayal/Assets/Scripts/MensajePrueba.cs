@@ -38,7 +38,7 @@ public class MensajePrueba : MonoBehaviour {
                         case 2:
 
                             prueba.text = "2a Prueba: ";
-                            mision.text = "¿Dónde esta la luz?";
+                            mision.text = "¿Cómo se abre la luz?";
                             break;
                         case 3:
                             prueba.text = "3a Prueba: Caja Fuerte";
@@ -77,7 +77,7 @@ public class MensajePrueba : MonoBehaviour {
                         case 2:
 
                             prueba.text = "2nd Test:";
-                            mision.text = "Where is the light?";
+                            mision.text = "How does the light open?";
                             break;
                         case 3:
                             prueba.text = "3rd Test: Safe";
